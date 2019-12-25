@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="00b36b71-2c02-4361-a86a-333b037fc75a" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1VI2FvnKg5vTqdmIK756Ywkca4i" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="212" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RunManager" selected="Application.BankApp">
+    <configuration name="BankApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.gui.ui.BankApp" />
+      <module name="bankApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.gui.ui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="bankApplicationGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.gui.ui.bankApplicationGUI" />
+      <module name="bankApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.gui.ui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="runGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.gui.runGUI" />
+      <module name="bankApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.gui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="startWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.gui.startWindow" />
+      <module name="bankApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.gui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.BankApp" />
+        <item itemvalue="Application.bankApplicationGUI" />
+        <item itemvalue="Application.runGUI" />
+        <item itemvalue="Application.startWindow" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="00b36b71-2c02-4361-a86a-333b037fc75a" name="Default Changelist" comment="" />
+      <created>1576926188993</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1576926188993</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="499" y="188" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1577218207220">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="499" y="188" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1577218207220" />
+    <state x="574" y="143" key="#com.intellij.ide.util.MemberChooser" timestamp="1577302259682">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="574" y="143" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1577302259682" />
+    <state x="499" y="180" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1577031707434">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="499" y="180" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.864@0.0.1536.864" timestamp="1577031707434" />
+    <state width="1493" height="144" key="GridCell.Tab.0.bottom" timestamp="1577306706328">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="144" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1577306706328" />
+    <state width="1493" height="144" key="GridCell.Tab.0.center" timestamp="1577306706328">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="144" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1577306706328" />
+    <state width="1493" height="144" key="GridCell.Tab.0.left" timestamp="1577306706328">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="144" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1577306706328" />
+    <state width="1493" height="144" key="GridCell.Tab.0.right" timestamp="1577306706328">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="144" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1577306706328" />
+    <state width="1493" height="277" key="GridCell.Tab.1.bottom" timestamp="1576947298754">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="277" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1576947298754" />
+    <state width="1493" height="277" key="GridCell.Tab.1.center" timestamp="1576947298754">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="277" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1576947298754" />
+    <state width="1493" height="277" key="GridCell.Tab.1.left" timestamp="1576947298754">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="277" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1576947298754" />
+    <state width="1493" height="277" key="GridCell.Tab.1.right" timestamp="1576947298754">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="277" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1576947298754" />
+    <state x="276" y="62" key="SettingsEditor" timestamp="1577220579357">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="276" y="62" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1577220579357" />
+    <state x="470" y="258" key="com.intellij.ide.util.TipDialog" timestamp="1577295052584">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="470" y="258" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1577295052584" />
+    <state x="425" y="197" key="run.anything.popup" timestamp="1577301513285">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="425" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1577301513285" />
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1577129962619">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1577129962619" />
+  </component>
+</project>
