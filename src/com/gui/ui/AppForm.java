@@ -5,7 +5,6 @@ import com.gui.styles.*;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.List;
 
 /*
 USING COLOR PALETTE:
@@ -22,6 +21,8 @@ public class AppForm extends JFrame {
     JPanel mainPanel = new mainPanel();
 
     private static int state = 0;
+    //TODO CHECK IF VARIABLE BELOW IS USELESS (PROBABLY IT IS)
+    private static String loggedPesel = "";
 
     public AppForm(String title, int width) {
         super(title);

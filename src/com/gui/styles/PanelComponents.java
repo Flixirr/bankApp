@@ -31,7 +31,7 @@ public class PanelComponents {
     static JLabel pesel = new JLabel("PESEL"), password = new JLabel("PASSWORD"),
             surname = new JLabel("SURNAME"), name = new JLabel("NAME"), cBalance = new JLabel("Current balance: "),
             cBalanceInt = new JLabel("0"), enterAmount = new JLabel("Enter amount "), accNum = new JLabel(
-                    "Account number: "), accNumInt = new JLabel("0");
+                    "Account number: "), accNumInt = new JLabel(), sAccNumInt = new JLabel("0");
 
     private static ArrayList<JButton> welcomeToolbarButtons = new ArrayList<>() {
         {
@@ -66,7 +66,7 @@ public class PanelComponents {
     {
         {
             add(accNum);
-            add(accNumInt);
+            add(sAccNumInt);
             add(cBalance);
             add(cBalanceInt);
             add(history);
@@ -246,5 +246,13 @@ public class PanelComponents {
 
     public static JTextField gettNameField() {
         return tNameField;
+    }
+
+    public static JLabel getAccNumInt() {
+        return accNumInt;
+    }
+
+    public static JLabel getsAccNumInt() {
+        return sAccNumInt;
     }
 }

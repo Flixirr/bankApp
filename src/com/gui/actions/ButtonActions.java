@@ -1,6 +1,10 @@
 package com.gui.actions;
 
+import com.algorithms.ComponentByName;
 import com.algorithms.FileAlgorithms;
+import com.algorithms.accNumGenerator;
+import com.algorithms.checkDataCorrectness;
+import com.gui.styles.PanelComponents;
 import com.gui.styles.Styles;
 import com.gui.ui.AppForm;
 
@@ -9,9 +13,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.LinkedHashMap;
 import java.util.Map;
+
+import static javax.swing.JOptionPane.showMessageDialog;
 
 public class ButtonActions {
 
@@ -61,6 +66,7 @@ public class ButtonActions {
         private JPanel sidebar;
         private ArrayList<JButton> btns;
         private ArrayList<Component> comps;
+        String PESEL, password;
 
         public loggedInForm(JPanel panel, JPanel sidebar, ArrayList<JButton> btns, ArrayList<Component> comps)
         {
@@ -69,25 +75,35 @@ public class ButtonActions {
             this.sidebar = sidebar;
             this.btns = btns;
         }
-
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
-            AppForm.setThisState(1);
-            panel.removeAll();
-            sidebar.removeAll();
-            Styles.toolbarContent(sidebar, btns);
-            Styles.accountPanelComps(panel, comps);
-            sidebar.repaint();
-            panel.repaint();
-            sidebar.revalidate();
-            panel.revalidate();
+            PESEL = ((JTextField) ComponentByName.getComponentByName(panel, "PESEL!")).getText();
+            password = ((JTextField) ComponentByName.getComponentByName(panel, "Password!")).getText();
+            if(checkDataCorrectness.passwordPeselMatch(PESEL, password)) {
+                PanelComponents.getAccNumInt().setText(FileAlgorithms.peselAccountPair().get(PESEL));
+                AppForm.setThisState(1);
+                panel.removeAll();
+                sidebar.removeAll();
+                Styles.toolbarContent(sidebar, btns);
+                Styles.accountPanelComps(panel, comps);
+                sidebar.repaint();
+                panel.repaint();
+                sidebar.revalidate();
+                panel.revalidate();
+            }
+            else
+            {
+                ((JTextField) ComponentByName.getComponentByName(panel, "PESEL!")).setText("");
+                ((JTextField) ComponentByName.getComponentByName(panel, "Password!")).setText("");
+                showMessageDialog(null, "PESEL or password incorrect.");
+            }
         }
     }
 
     public static class submit implements ActionListener
     {
         JPanel main;
-        Map<String, String> fields = new HashMap<String, String>();
+        Map<String, String> fields = new LinkedHashMap<String, String>();
 
         public submit(JPanel panel)
         {
@@ -98,6 +114,7 @@ public class ButtonActions {
         public void actionPerformed(ActionEvent actionEvent) {
             if(AppForm.getThisState() == 0)
             {
+                //TODO CREATE FOLDER FOR ACCOUNT FOR EACH USER
                 for(Component co: main.getComponents())
                 {
                     if(co instanceof JTextField)
@@ -106,7 +123,7 @@ public class ButtonActions {
                         ((JTextField) co).setText("");
                     }
                 }
-
+                fields.put("ANUM!", accNumGenerator.generateAccNum());
                 FileAlgorithms.accountRegFile(fields);
             }
             else
@@ -115,5 +132,7 @@ public class ButtonActions {
             }
         }
     }
+
+    //TODO CREATE LOG OUT BUTTON
 
 }
