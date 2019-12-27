@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="00b36b71-2c02-4361-a86a-333b037fc75a" name="Default Changelist" comment="" />
+    <list default="true" id="00b36b71-2c02-4361-a86a-333b037fc75a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/algorithms/accNumGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/algorithms/accNumGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gui/actions/ButtonActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gui/actions/ButtonActions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gui/styles/PanelComponents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gui/styles/PanelComponents.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +19,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1VI2FvnKg5vTqdmIK756Ywkca4i" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -23,6 +31,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="212" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RunManager" selected="Application.BankApp">
@@ -125,22 +134,22 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="499" y="180" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.864@0.0.1536.864" timestamp="1577031707434" />
-    <state width="1493" height="144" key="GridCell.Tab.0.bottom" timestamp="1577401428602">
+    <state width="1493" height="144" key="GridCell.Tab.0.bottom" timestamp="1577408156166">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="144" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1577401428602" />
-    <state width="1493" height="144" key="GridCell.Tab.0.center" timestamp="1577401428602">
+    <state width="1493" height="144" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1577408156166" />
+    <state width="1493" height="144" key="GridCell.Tab.0.center" timestamp="1577408156165">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="144" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1577401428602" />
-    <state width="1493" height="144" key="GridCell.Tab.0.left" timestamp="1577401428602">
+    <state width="1493" height="144" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1577408156165" />
+    <state width="1493" height="144" key="GridCell.Tab.0.left" timestamp="1577408156165">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="144" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1577401428602" />
-    <state width="1493" height="144" key="GridCell.Tab.0.right" timestamp="1577401428602">
+    <state width="1493" height="144" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1577408156165" />
+    <state width="1493" height="144" key="GridCell.Tab.0.right" timestamp="1577408156165">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="144" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1577401428602" />
+    <state width="1493" height="144" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1577408156165" />
     <state width="1493" height="277" key="GridCell.Tab.1.bottom" timestamp="1576947298754">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -161,10 +170,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="276" y="62" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1577220579357" />
-    <state x="470" y="258" key="com.intellij.ide.util.TipDialog" timestamp="1577400899957">
+    <state x="470" y="258" key="com.intellij.ide.util.TipDialog" timestamp="1577407625289">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="470" y="258" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1577400899956" />
+    <state x="470" y="258" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1577407625289" />
     <state x="425" y="197" key="run.anything.popup" timestamp="1577301513285">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

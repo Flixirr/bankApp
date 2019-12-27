@@ -57,9 +57,6 @@ public class AppForm extends JFrame {
         PanelComponents.getAccount().addActionListener(new ButtonActions.changeAccountStyle(mainPanel,
                 PanelComponents.getAccountPanel()));
 
-        PanelComponents.getBrokerageAccount().addActionListener(new ButtonActions.changeAccountStyle(mainPanel,
-                PanelComponents.getBrokerageAccountPanel()));
-
         PanelComponents.getSavAccount().addActionListener(new ButtonActions.changeAccountStyle(mainPanel,
                 PanelComponents.getSavAccountPanel()));
 

@@ -13,20 +13,16 @@ public class PanelComponents {
     private static JButton transaction = new JButton("Make transaction");
     private static JButton history = new JButton("History");
     private static JButton deposit = new JButton("Deposit funds");
-    private static JButton buy = new JButton("Buy");
-    private static JButton sell = new JButton("Sell");
-    private static JButton availableOptions = new JButton("Show available options");
-    private static JButton ownedOptions = new JButton("Show owned options");
+    private static JButton depoConf = new JButton("Submit");
 
     private static JButton cashLoan = new JButton("Cash loan");
     private static JButton account = new JButton("Account");
     private static JButton savAccount = new JButton("Savings account");
-    private static JButton brokerageAccount = new JButton("Brokerage account");
 
     static JPasswordField pField = new JPasswordField();
 
     static JTextField tField = new JTextField(), tSurnameField = new JTextField(), tNameField = new JTextField(),
-            amount = new JTextField(), enterAccNum = new JTextField();
+            amount = new JTextField(), enterAccNum = new JTextField(), depositCode = new JTextField();
 
     static JLabel pesel = new JLabel("PESEL"), password = new JLabel("PASSWORD"),
             surname = new JLabel("SURNAME"), name = new JLabel("NAME"), cBalance = new JLabel("Current balance: "),
@@ -45,7 +41,6 @@ public class PanelComponents {
             add(account);
             add(savAccount);
             add(cashLoan);
-            add(brokerageAccount);
         }
     };
 
@@ -86,19 +81,6 @@ public class PanelComponents {
         }
     };
 
-    private static ArrayList<Component> brokerageAccountPanel = new ArrayList<>()
-    {
-        {
-            add(accNum);
-            add(accNumInt);
-            add(cBalance);
-            add(cBalanceInt);
-            add(ownedOptions);
-            add(availableOptions);
-            add(buy);
-            add(sell);
-        }
-    };
 
     private static ArrayList<Component> welcomeMainComps = new ArrayList<>() {
         {
@@ -134,10 +116,6 @@ public class PanelComponents {
 
     public static JButton getAccount() {
         return account;
-    }
-
-    public static JButton getBrokerageAccount() {
-        return brokerageAccount;
     }
 
     public static JButton getCashLoan() {
@@ -196,28 +174,9 @@ public class PanelComponents {
         return savAccountPanel;
     }
 
-    public static ArrayList<Component> getBrokerageAccountPanel() {
-        return brokerageAccountPanel;
-    }
 
     public static ArrayList<Component> getLoanComps() {
         return loanComps;
-    }
-
-    public static JButton getAvailableOptions() {
-        return availableOptions;
-    }
-
-    public static JButton getBuy() {
-        return buy;
-    }
-
-    public static JButton getOwnedOptions() {
-        return ownedOptions;
-    }
-
-    public static JButton getSell() {
-        return sell;
     }
 
     public static JPasswordField getpField() {
