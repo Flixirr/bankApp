@@ -3,9 +3,32 @@
   <component name="ChangeListManager">
     <list default="true" id="00b36b71-2c02-4361-a86a-333b037fc75a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/META-INF/bankApp.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/actions/ButtonActions$loggedInForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/actions/ButtonActions$loggedInForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/actions/ButtonActions$submit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/actions/ButtonActions$submit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/ui/AppForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/ui/AppForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/intellij/uiDesigner/core/AbstractLayout.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/intellij/uiDesigner/core/DimensionInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/intellij/uiDesigner/core/GridConstraints.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/intellij/uiDesigner/core/GridLayoutManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/intellij/uiDesigner/core/HorizontalInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/intellij/uiDesigner/core/LayoutState.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/intellij/uiDesigner/core/Spacer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/intellij/uiDesigner/core/SupportCode$TextWithMnemonic.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/intellij/uiDesigner/core/SupportCode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/intellij/uiDesigner/core/Util.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/intellij/uiDesigner/core/VerticalInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/algorithms/FileAlgorithms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/algorithms/FileAlgorithms.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/algorithms/accNumGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/algorithms/accNumGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/gui/actions/ButtonActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gui/actions/ButtonActions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/gui/styles/PanelComponents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gui/styles/PanelComponents.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +142,19 @@
       <option name="presentableId" value="Default" />
       <updated>1576926188993</updated>
     </task>
+    <task id="LOCAL-00001" summary="I AM VERY TIRED">
+      <created>1577408269206</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1577408269206</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="I AM VERY TIRED" />
+    <option name="LAST_COMMIT_MESSAGE" value="I AM VERY TIRED" />
   </component>
   <component name="WindowStateProjectService">
     <state x="499" y="188" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1577218207220">
@@ -134,6 +169,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="499" y="180" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.864@0.0.1536.864" timestamp="1577031707434" />
+    <state x="414" y="30" key="CommitChangelistDialog2" timestamp="1577408268321">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="414" y="30" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1577408268321" />
     <state width="1493" height="144" key="GridCell.Tab.0.bottom" timestamp="1577408156166">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

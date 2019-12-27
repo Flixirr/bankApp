@@ -10,8 +10,6 @@ public class accNumGenerator {
     static String baseForSavAcc = "2 0000 ";
     static String baseForBrokerage = "3 0000 ";
 
-    //TODO GENERATE ACCOUNTS SO EVERY CLIENT SHOULD GET NEXT NUM, EX FIRST GETS 1 0000 0001, SECOND 1 0000 0002 ETC
-
     public static String numXXXXFormat(int num)
     {
         StringBuilder result = new StringBuilder(Integer.toString(num));

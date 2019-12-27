@@ -136,6 +136,13 @@ public class FileAlgorithms {
         return dirs.length;
     }
 
+    public static void addTransactionFile(String transactionID, String amount, String desc, String PESEL)
+    {
+        File transaction = new File("accounts/"+PESEL+'/'+transactionID+".txt");
+        //TODO COMPLETE THIS METHOD TO CREATE TRANSACTION FILES
+    }
+
+
     public static ArrayList<String> getAccNum() {
         return accNum;
     }
