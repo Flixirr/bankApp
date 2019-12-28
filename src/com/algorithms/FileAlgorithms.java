@@ -1,10 +1,12 @@
 package com.algorithms;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TreeMap;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static javax.swing.JOptionPane.showMessageDialog;
 
@@ -105,6 +107,14 @@ public class FileAlgorithms {
 
         assert dirs != null : "NullPointerException occured";
         return dirs.length;
+    }
+
+    public static int fileCount(File dir)
+    {
+        String[] files = dir.list((file, s) -> new File(file, s).isFile());
+
+        assert files != null;
+        return files.length;
     }
 
     public static void addTransactionFile(String transactionID, String amount, String desc, String PESEL)

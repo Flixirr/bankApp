@@ -16,6 +16,11 @@ public class checkDataCorrectness {
         return checkResult;
     }
 
+    public static boolean checkAccNum(String accNum)
+    {
+
+    }
+
     public static boolean passwordPeselMatch(String user, String password)
     {
         Map<String, String> accounts = FileAlgorithms.parseFileToStringMap(new File("accounts/accounts.txt"));

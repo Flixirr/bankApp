@@ -11,9 +11,9 @@ public class PanelComponents {
     private static JButton login = new JButton("Login");
     private static JButton submit = new JButton("Submit");
     private static JButton transaction = new JButton("Make transaction");
-    private static JButton history = new JButton("History");
+    private static JButton history = new JButton("Transaction history");
     private static JButton deposit = new JButton("Deposit funds");
-    private static JButton depoConf = new JButton("Submit");
+
 
     private static JButton cashLoan = new JButton("Cash loan");
     private static JButton account = new JButton("Account");
@@ -22,12 +22,15 @@ public class PanelComponents {
     static JPasswordField pField = new JPasswordField();
 
     static JTextField tField = new JTextField(), tSurnameField = new JTextField(), tNameField = new JTextField(),
-            amount = new JTextField(), enterAccNum = new JTextField(), depositCode = new JTextField();
+            amount = new JTextField(), enterAccNum = new JTextField(), depositCode = new JTextField(), title =
+            new JTextField(), desc = new JTextField();
 
     static JLabel pesel = new JLabel("PESEL"), password = new JLabel("PASSWORD"),
             surname = new JLabel("SURNAME"), name = new JLabel("NAME"), cBalance = new JLabel("Current balance: "),
             cBalanceInt = new JLabel("0"), enterAmount = new JLabel("Enter amount "), accNum = new JLabel(
-                    "Account number: "), accNumInt = new JLabel(), sAccNumInt = new JLabel("0");
+                    "Account number: "), accNumInt = new JLabel(), sAccNumInt = new JLabel("0"), warning =
+            new JLabel("WARNING! "), warnMsg = new JLabel("Transactions can only be made to main account"), titleLab
+            = new JLabel("Title"), descLab = new JLabel("Description");
 
     private static ArrayList<JButton> welcomeToolbarButtons = new ArrayList<>() {
         {
@@ -36,11 +39,40 @@ public class PanelComponents {
         }
     };
 
+    private static ArrayList<Component> transactionAcc = new ArrayList<>(){
+        {
+            add(accNum);
+            add(enterAccNum);
+            add(enterAmount);
+            add(amount);
+            add(titleLab);
+            add(title);
+            add(descLab);
+            add(desc);
+            add(submit);
+        }
+    };
+
+    private static ArrayList<Component> transactionSavAcc = new ArrayList<>(){
+        {
+            add(warning);
+            add(warnMsg);
+            add(enterAmount);
+            add(amount);
+            add(titleLab);
+            add(title);
+            add(descLab);
+            add(desc);
+            add(submit);
+        }
+    };
+
     private static ArrayList<JButton> loggedToolbarButtons = new ArrayList<>() {
         {
             add(account);
             add(savAccount);
             add(cashLoan);
+            add(history);
         }
     };
 
@@ -51,7 +83,6 @@ public class PanelComponents {
             add(accNumInt);
             add(cBalance);
             add(cBalanceInt);
-            add(history);
             add(transaction);
             add(deposit);
         }
@@ -64,7 +95,6 @@ public class PanelComponents {
             add(sAccNumInt);
             add(cBalance);
             add(cBalanceInt);
-            add(history);
             add(transaction);
             add(deposit);
         }
@@ -213,5 +243,13 @@ public class PanelComponents {
 
     public static JLabel getsAccNumInt() {
         return sAccNumInt;
+    }
+
+    public static ArrayList<Component> getTransactionAcc() {
+        return transactionAcc;
+    }
+
+    public static ArrayList<Component> getTransactionSavAcc() {
+        return transactionSavAcc;
     }
 }

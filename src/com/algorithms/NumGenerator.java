@@ -5,7 +5,7 @@ import java.util.Collections;
 
 import static com.algorithms.FileAlgorithms.getNumPeselPairKeys;
 
-public class accNumGenerator {
+public class NumGenerator {
     static String baseForAcc = "1 0000 ";
     static String baseForSavAcc = "2 0000 ";
 
@@ -30,16 +30,6 @@ public class accNumGenerator {
         }
         else
         {
-            if(Integer.parseInt(getNumPeselPairKeys().get(0).split(" ")[2]) != 1) {
-                return baseForAcc+"0001";
-            }
-            else {
-                for (int i = 0; i < sz/2-1; i++) {
-                    if((Integer.parseInt(getNumPeselPairKeys().get(i+1).split(" ")[2]) -
-                            Integer.parseInt(getNumPeselPairKeys().get(i).split(" ")[2])) != 1)
-                        return baseForAcc+numXXXXFormat(Integer.parseInt(getNumPeselPairKeys().get(i).split(" ")[2])+1);
-                }
-            }
             return baseForAcc+numXXXXFormat(Integer.parseInt(getNumPeselPairKeys().get(sz/2-1).split(" ")[2])+1);
         }
     }
@@ -53,16 +43,15 @@ public class accNumGenerator {
         }
         else
         {
-            if(Integer.parseInt(getNumPeselPairKeys().get(sz/2).split(" ")[2]) != 1) {
-                return baseForSavAcc+"0001";
-            }
-            else {
-                for (int i = sz/2; i < sz-1; i++) {
-                    if((Integer.parseInt(getNumPeselPairKeys().get(i+1).split(" ")[2]) - Integer.parseInt(getNumPeselPairKeys().get(i).split(" ")[2])) != 1)
-                        return baseForSavAcc+numXXXXFormat(Integer.parseInt(getNumPeselPairKeys().get(i).split(" ")[2])+1);
-                }
-            }
             return baseForSavAcc+numXXXXFormat(Integer.parseInt(getNumPeselPairKeys().get(sz-1).split(" ")[2])+1);
         }
+    }
+
+    public static String generateTransactionNum(String accNum)
+    {
+        String newAccNum = accNum.replace(" ", "");
+        int tNum = FileAlgorithms.fileCount(new File("accounts/"+FileAlgorithms.getNumPeselPair().get(accNum)));
+
+        return newAccNum+ (tNum + 1);
     }
 }

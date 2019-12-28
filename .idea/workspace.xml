@@ -9,9 +9,22 @@
       <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/actions/ButtonActions$loggedInForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/actions/ButtonActions$loggedInForm.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/actions/ButtonActions$submit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/actions/ButtonActions$submit.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/actions/ButtonActions.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/actions/ButtonActions.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/ui/AppForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/ui/AppForm.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/ui/BankApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/ui/BankApp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/algorithms/FileAlgorithms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/algorithms/FileAlgorithms.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/algorithms/accNumGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/algorithms/NumGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/algorithms/checkDataCorrectness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/algorithms/checkDataCorrectness.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/gui/actions/ButtonActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gui/actions/ButtonActions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gui/styles/PanelComponents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gui/styles/PanelComponents.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gui/ui/AppForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gui/ui/AppForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/gui/ui/BankApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gui/ui/BankApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -140,13 +153,21 @@
       <option name="project" value="LOCAL" />
       <updated>1577491897383</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="FINISHED GENERATING ACCOUNT NUMBERS FOR EVERY USER (FIXED SO IT ACTUALLY SHOWS IT IN GUI)">
+      <created>1577492803385</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1577492803385</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="I AM VERY TIRED" />
     <MESSAGE value="FINISHED GENERATING ACCOUNT NUMBERS FOR EVERY USER" />
-    <option name="LAST_COMMIT_MESSAGE" value="FINISHED GENERATING ACCOUNT NUMBERS FOR EVERY USER" />
+    <MESSAGE value="FINISHED GENERATING ACCOUNT NUMBERS FOR EVERY USER (FIXED SO IT ACTUALLY SHOWS IT IN GUI)" />
+    <option name="LAST_COMMIT_MESSAGE" value="FINISHED GENERATING ACCOUNT NUMBERS FOR EVERY USER (FIXED SO IT ACTUALLY SHOWS IT IN GUI)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="499" y="188" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1577218207220">
@@ -161,26 +182,26 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="499" y="180" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.864@0.0.1536.864" timestamp="1577031707434" />
-    <state x="414" y="30" key="CommitChangelistDialog2" timestamp="1577491896260">
+    <state x="414" y="30" key="CommitChangelistDialog2" timestamp="1577492802497">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="414" y="30" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1577491896260" />
-    <state width="1493" height="109" key="GridCell.Tab.0.bottom" timestamp="1577492718318">
+    <state x="414" y="30" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1577492802497" />
+    <state width="1493" height="109" key="GridCell.Tab.0.bottom" timestamp="1577537039046">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="109" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1577492718318" />
-    <state width="1493" height="109" key="GridCell.Tab.0.center" timestamp="1577492718318">
+    <state width="1493" height="109" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1577537039046" />
+    <state width="1493" height="109" key="GridCell.Tab.0.center" timestamp="1577537039046">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="109" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1577492718318" />
-    <state width="1493" height="109" key="GridCell.Tab.0.left" timestamp="1577492718318">
+    <state width="1493" height="109" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1577537039046" />
+    <state width="1493" height="109" key="GridCell.Tab.0.left" timestamp="1577537039045">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="109" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1577492718318" />
-    <state width="1493" height="109" key="GridCell.Tab.0.right" timestamp="1577492718318">
+    <state width="1493" height="109" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1577537039045" />
+    <state width="1493" height="109" key="GridCell.Tab.0.right" timestamp="1577537039046">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="109" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1577492718318" />
+    <state width="1493" height="109" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1577537039046" />
     <state width="1493" height="277" key="GridCell.Tab.1.bottom" timestamp="1577488830852">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -201,17 +222,28 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="276" y="62" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1577220579357" />
-    <state x="470" y="258" key="com.intellij.ide.util.TipDialog" timestamp="1577491225718">
+    <state x="470" y="258" key="com.intellij.ide.util.TipDialog" timestamp="1577530964918">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="470" y="258" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1577491225718" />
-    <state x="425" y="197" key="run.anything.popup" timestamp="1577301513285">
+    <state x="470" y="258" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1577530964918" />
+    <state x="425" y="197" key="run.anything.popup" timestamp="1577532827110">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="425" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1577301513285" />
-    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1577129962619">
+    <state x="425" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1577532827110" />
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1577532335059">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1577129962619" />
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1577532335059" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/algorithms/FileAlgorithms.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

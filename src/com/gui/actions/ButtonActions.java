@@ -2,7 +2,7 @@ package com.gui.actions;
 
 import com.algorithms.ComponentByName;
 import com.algorithms.FileAlgorithms;
-import com.algorithms.accNumGenerator;
+import com.algorithms.NumGenerator;
 import com.algorithms.checkDataCorrectness;
 import com.gui.styles.PanelComponents;
 import com.gui.styles.Styles;
@@ -12,7 +12,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -45,17 +44,47 @@ public class ButtonActions {
     {
         private JPanel panel;
         private ArrayList<Component> comps;
+        int state;
 
-        public changeAccountStyle(JPanel panel, ArrayList<Component> comps)
+        public changeAccountStyle(JPanel panel, ArrayList<Component> comps, int state)
         {
             this.panel = panel;
             this.comps = comps;
+            this.state = state;
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent actionEvent) {
+            AppForm.setThisState(state);
+            panel.removeAll();
+            Styles.accountPanelComps(panel, comps);
+            panel.repaint();
+            panel.revalidate();
+        }
+    }
+
+    public static class transactionButton implements ActionListener
+    {
+        private JPanel panel;
+
+        public transactionButton(JPanel panel)
+        {
+            this.panel = panel;
         }
 
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
             panel.removeAll();
-            Styles.accountPanelComps(panel, comps);
+            if(AppForm.getThisState() == 1)
+            {
+                Styles.accountPanelComps(panel, PanelComponents.getTransactionAcc());
+                AppForm.setThisState(2);
+            }
+            else if (AppForm.getThisState() == 3)
+            {
+                Styles.accountPanelComps(panel, PanelComponents.getTransactionSavAcc());
+                AppForm.setThisState(4);
+            }
             panel.repaint();
             panel.revalidate();
         }
@@ -112,7 +141,7 @@ public class ButtonActions {
         {
             main = panel;
         }
-
+        //1, 3, 5 acc choice, 0, 2, 4 panels with submit btn
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
             if(AppForm.getThisState() == 0)
@@ -126,13 +155,17 @@ public class ButtonActions {
                         ((JTextField) co).setText("");
                     }
                 }
-                fields.put("ANUM!", accNumGenerator.generateAccNum());
-                fields.put("SANUM!", accNumGenerator.generateSAccNum());
+                fields.put("ANUM!", NumGenerator.generateAccNum());
+                fields.put("SANUM!", NumGenerator.generateSAccNum());
                 FileAlgorithms.accountRegFile(fields);
             }
-            else
+            else if(AppForm.getThisState() == 2)
             {
-                //TODO: MAKE THIS AVAILABLE FOR LOANS
+                //TODO: TRANSACTION FROM ACCOUNT SUBMIT
+            }
+            else if(AppForm.getThisState() == 4)
+            {
+
             }
         }
     }
