@@ -11,7 +11,7 @@ public class BankApp {
 
     public static void main(String[] args)
     {
-        FileAlgorithms.setNumPeselPair();
+        //FileAlgorithms.setNumPeselPair();
         new AppForm("TST Bank", 1024);
     }
 

@@ -1,40 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="00b36b71-2c02-4361-a86a-333b037fc75a" name="Default Changelist" comment="FINISHED GENERATING ACCOUNT NUMBERS FOR EVERY USER">
-      <change afterPath="$PROJECT_DIR$/src/com/algorithms/Utilities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/MigLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/MigLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+    <list default="true" id="00b36b71-2c02-4361-a86a-333b037fc75a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/accounts.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bankApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/bankApp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/gui/effects/MouseEffects.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/gui/effects/MouseEffects.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/gui/styles/Styles.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/gui/styles/Styles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/gui/ui/AppForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/gui/ui/AppForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/gui/ui/BankApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/gui/ui/BankApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/gui/ui/LoginPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/gui/ui/LoginPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/gui/ui/ToolbarLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/gui/ui/ToolbarLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/algorithms/FileAlgorithms$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/algorithms/FileAlgorithms.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/algorithms/FileAlgorithms.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/algorithms/accNumGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/algorithms/accNumGenerator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/actions/ButtonActions$changeAccountStyle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/actions/ButtonActions$changeAccountStyle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/actions/ButtonActions$changePanelStyle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/actions/ButtonActions$changePanelStyle.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/actions/ButtonActions$loggedInForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/actions/ButtonActions$loggedInForm.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/actions/ButtonActions$submit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/actions/ButtonActions$submit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/actions/ButtonActions.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/actions/ButtonActions.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/ui/BankApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/ui/BankApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/algorithms/ComponentByName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/algorithms/ComponentByName.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/algorithms/FileAlgorithms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/algorithms/FileAlgorithms.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/algorithms/accNumGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/algorithms/accNumGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/algorithms/checkDataCorrectness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/algorithms/checkDataCorrectness.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/gui/actions/ButtonActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gui/actions/ButtonActions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/gui/effects/MouseEffects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gui/effects/MouseEffects.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/gui/styles/PanelComponents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gui/styles/PanelComponents.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/gui/styles/Styles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gui/styles/Styles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/gui/ui/AppForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gui/ui/AppForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/gui/ui/BankApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gui/ui/BankApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/gui/ui/Sidebar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gui/ui/Sidebar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/gui/ui/mainPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gui/ui/mainPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577408269206</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="FINISHED GENERATING ACCOUNT NUMBERS FOR EVERY USER">
+      <created>1577491897383</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1577491897383</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -176,26 +161,26 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="499" y="180" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.864@0.0.1536.864" timestamp="1577031707434" />
-    <state x="414" y="30" key="CommitChangelistDialog2" timestamp="1577491877365">
+    <state x="414" y="30" key="CommitChangelistDialog2" timestamp="1577491896260">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="414" y="30" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1577491877365" />
-    <state width="1493" height="109" key="GridCell.Tab.0.bottom" timestamp="1577491877419">
+    <state x="414" y="30" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1577491896260" />
+    <state width="1493" height="109" key="GridCell.Tab.0.bottom" timestamp="1577492718318">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="109" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1577491877419" />
-    <state width="1493" height="109" key="GridCell.Tab.0.center" timestamp="1577491877419">
+    <state width="1493" height="109" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1577492718318" />
+    <state width="1493" height="109" key="GridCell.Tab.0.center" timestamp="1577492718318">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="109" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1577491877419" />
-    <state width="1493" height="109" key="GridCell.Tab.0.left" timestamp="1577491877419">
+    <state width="1493" height="109" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1577492718318" />
+    <state width="1493" height="109" key="GridCell.Tab.0.left" timestamp="1577492718318">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="109" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1577491877419" />
-    <state width="1493" height="109" key="GridCell.Tab.0.right" timestamp="1577491877419">
+    <state width="1493" height="109" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1577492718318" />
+    <state width="1493" height="109" key="GridCell.Tab.0.right" timestamp="1577492718318">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="109" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1577491877419" />
+    <state width="1493" height="109" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1577492718318" />
     <state width="1493" height="277" key="GridCell.Tab.1.bottom" timestamp="1577488830852">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

@@ -16,6 +16,8 @@ public class FileAlgorithms {
     static BufferedWriter bWriterAcc;
 
     private static TreeMap<String, String> numPeselPair = new TreeMap<>();
+    private static Map<String, String> accNum = new HashMap<>();
+    private static Map<String, String> sAccNum = new HashMap<>();
 
     public static void setNumPeselPair()
     {
@@ -28,7 +30,9 @@ public class FileAlgorithms {
             {
                 holder = curLine.split("!");
                 numPeselPair.put(holder[holder.length-3], holder[5]);
+                accNum.put(holder[5], holder[holder.length-3]);
                 numPeselPair.put(holder[holder.length-1], holder[5]);
+                sAccNum.put(holder[5], holder[holder.length-1]);
             }
             bw.close();
         }
@@ -114,5 +118,13 @@ public class FileAlgorithms {
     }
     public static ArrayList<String> getNumPeselPairKeys() {
         return new ArrayList<>(numPeselPair.keySet());
+    }
+
+    public static Map<String, String> getAccNum() {
+        return accNum;
+    }
+
+    public static Map<String, String> getsAccNum() {
+        return sAccNum;
     }
 }

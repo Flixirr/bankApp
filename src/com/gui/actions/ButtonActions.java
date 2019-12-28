@@ -81,7 +81,9 @@ public class ButtonActions {
             PESEL = ((JTextField) ComponentByName.getComponentByName(panel, "PESEL!")).getText();
             password = ((JTextField) ComponentByName.getComponentByName(panel, "Password!")).getText();
             if(checkDataCorrectness.passwordPeselMatch(PESEL, password)) {
-                //PanelComponents.getAccNumInt().setText(FileAlgorithms.peselAccountPair().get(PESEL));
+                FileAlgorithms.setNumPeselPair();
+                PanelComponents.getAccNumInt().setText(FileAlgorithms.getAccNum().get(PESEL));
+                PanelComponents.getsAccNumInt().setText(FileAlgorithms.getsAccNum().get(PESEL));
                 AppForm.setThisState(1);
                 panel.removeAll();
                 sidebar.removeAll();
@@ -115,6 +117,7 @@ public class ButtonActions {
         public void actionPerformed(ActionEvent actionEvent) {
             if(AppForm.getThisState() == 0)
             {
+                FileAlgorithms.setNumPeselPair();
                 for(Component co: main.getComponents())
                 {
                     if(co instanceof JTextField)
@@ -126,7 +129,6 @@ public class ButtonActions {
                 fields.put("ANUM!", accNumGenerator.generateAccNum());
                 fields.put("SANUM!", accNumGenerator.generateSAccNum());
                 FileAlgorithms.accountRegFile(fields);
-                FileAlgorithms.setNumPeselPair();
             }
             else
             {
