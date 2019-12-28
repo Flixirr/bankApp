@@ -1,14 +1,13 @@
 package com.algorithms;
 
-import static com.algorithms.FileAlgorithms.accNumGet;
-import static com.algorithms.FileAlgorithms.getAccNum;
 import java.io.File;
 import java.util.Collections;
+
+import static com.algorithms.FileAlgorithms.getNumPeselPairKeys;
 
 public class accNumGenerator {
     static String baseForAcc = "1 0000 ";
     static String baseForSavAcc = "2 0000 ";
-    static String baseForBrokerage = "3 0000 ";
 
     public static String numXXXXFormat(int num)
     {
@@ -24,24 +23,46 @@ public class accNumGenerator {
 
     public static String generateAccNum()
     {
-        accNumGet();
-        Collections.sort(getAccNum());
+        int sz = getNumPeselPairKeys().size();
         if(FileAlgorithms.subDirCount(new File("accounts")) == 0)
         {
             return baseForAcc+"0001";
         }
         else
         {
-            if(Integer.parseInt(getAccNum().get(0)) != 1) {
+            if(Integer.parseInt(getNumPeselPairKeys().get(0).split(" ")[2]) != 1) {
                 return baseForAcc+"0001";
             }
             else {
-                for (int i = 0; i < getAccNum().size() - 1; i++) {
-                    if((Integer.parseInt(getAccNum().get(i+1)) - Integer.parseInt(getAccNum().get(i))) != 1)
-                        return baseForAcc+numXXXXFormat(Integer.parseInt(getAccNum().get(i))+1);
+                for (int i = 0; i < sz/2-1; i++) {
+                    if((Integer.parseInt(getNumPeselPairKeys().get(i+1).split(" ")[2]) -
+                            Integer.parseInt(getNumPeselPairKeys().get(i).split(" ")[2])) != 1)
+                        return baseForAcc+numXXXXFormat(Integer.parseInt(getNumPeselPairKeys().get(i).split(" ")[2])+1);
                 }
             }
-            return baseForAcc+numXXXXFormat(Integer.parseInt(getAccNum().get(getAccNum().size()-1))+1);
+            return baseForAcc+numXXXXFormat(Integer.parseInt(getNumPeselPairKeys().get(sz/2-1).split(" ")[2])+1);
+        }
+    }
+
+    public static String generateSAccNum()
+    {
+        int sz = getNumPeselPairKeys().size();
+        if(FileAlgorithms.subDirCount(new File("accounts")) == 0)
+        {
+            return baseForSavAcc+"0001";
+        }
+        else
+        {
+            if(Integer.parseInt(getNumPeselPairKeys().get(sz/2).split(" ")[2]) != 1) {
+                return baseForSavAcc+"0001";
+            }
+            else {
+                for (int i = sz/2; i < sz-1; i++) {
+                    if((Integer.parseInt(getNumPeselPairKeys().get(i+1).split(" ")[2]) - Integer.parseInt(getNumPeselPairKeys().get(i).split(" ")[2])) != 1)
+                        return baseForSavAcc+numXXXXFormat(Integer.parseInt(getNumPeselPairKeys().get(i).split(" ")[2])+1);
+                }
+            }
+            return baseForSavAcc+numXXXXFormat(Integer.parseInt(getNumPeselPairKeys().get(sz-1).split(" ")[2])+1);
         }
     }
 }

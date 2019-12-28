@@ -1,3 +1,0 @@
-Name!a!Surname!a!PESEL!a!Password!a!ANUM!1 0000 0001!
-Name!b!Surname!b!PESEL!b!Password!b!ANUM!1 0000 0002!
-Name!c!Surname!c!PESEL!c!Password!c!ANUM!1 0000 0003!

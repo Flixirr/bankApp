@@ -12,6 +12,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -80,7 +81,7 @@ public class ButtonActions {
             PESEL = ((JTextField) ComponentByName.getComponentByName(panel, "PESEL!")).getText();
             password = ((JTextField) ComponentByName.getComponentByName(panel, "Password!")).getText();
             if(checkDataCorrectness.passwordPeselMatch(PESEL, password)) {
-                PanelComponents.getAccNumInt().setText(FileAlgorithms.peselAccountPair().get(PESEL));
+                //PanelComponents.getAccNumInt().setText(FileAlgorithms.peselAccountPair().get(PESEL));
                 AppForm.setThisState(1);
                 panel.removeAll();
                 sidebar.removeAll();
@@ -114,7 +115,6 @@ public class ButtonActions {
         public void actionPerformed(ActionEvent actionEvent) {
             if(AppForm.getThisState() == 0)
             {
-                //TODO CREATE FOLDER FOR ACCOUNT FOR EACH USER
                 for(Component co: main.getComponents())
                 {
                     if(co instanceof JTextField)
@@ -124,7 +124,9 @@ public class ButtonActions {
                     }
                 }
                 fields.put("ANUM!", accNumGenerator.generateAccNum());
+                fields.put("SANUM!", accNumGenerator.generateSAccNum());
                 FileAlgorithms.accountRegFile(fields);
+                FileAlgorithms.setNumPeselPair();
             }
             else
             {

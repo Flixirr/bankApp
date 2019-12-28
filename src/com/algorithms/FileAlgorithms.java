@@ -4,6 +4,8 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
+
 import static javax.swing.JOptionPane.showMessageDialog;
 
 public class FileAlgorithms {
@@ -13,7 +15,27 @@ public class FileAlgorithms {
     static FileWriter writerAccounts;
     static BufferedWriter bWriterAcc;
 
-    private static ArrayList<String> accNum = new ArrayList<>();
+    private static TreeMap<String, String> numPeselPair = new TreeMap<>();
+
+    public static void setNumPeselPair()
+    {
+        numPeselPair.clear();
+        String curLine;
+        String holder[];
+        try{
+            BufferedReader bw = new BufferedReader(new FileReader(new File("accounts/accounts.txt")));
+            while((curLine = bw.readLine()) != null)
+            {
+                holder = curLine.split("!");
+                numPeselPair.put(holder[holder.length-3], holder[5]);
+                numPeselPair.put(holder[holder.length-1], holder[5]);
+            }
+            bw.close();
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+    }
 
     public static void accountRegFile(Map<String, String> data)
     {
@@ -55,7 +77,6 @@ public class FileAlgorithms {
             {
                 keyAndVal = curLine.split("!");
                 result.put(keyAndVal[5], keyAndVal[7]);
-                accNum.add(keyAndVal[keyAndVal.length-1].split(" ")[2]);
             }
         }
         catch (IOException e){
@@ -72,65 +93,11 @@ public class FileAlgorithms {
             }
         }
         return result;
-    }
-
-    public static Map<String, String> peselAccountPair()
-    {
-        Map<String, String> result = new HashMap<>();
-        BufferedReader bw = null;
-        String curLine;
-        String[] keyAndVal;
-        try{
-            bw = new BufferedReader(new FileReader(new File("accounts/accounts.txt")));
-            while((curLine = bw.readLine()) != null)
-            {
-                keyAndVal = curLine.split("!");
-                result.put(keyAndVal[5], keyAndVal[9]);
-                accNum.add(keyAndVal[keyAndVal.length-1].split(" ")[2]);
-            }
-        }
-        catch (IOException e){
-            e.printStackTrace();
-        }
-        finally
-        {
-            try{
-                if(bw != null)
-                    bw.close();
-            } catch (IOException e)
-            {
-                e.printStackTrace();
-            }
-        }
-        return result;
-    }
-
-    public static void accNumGet()
-    {
-        String curLine;
-        accNum.clear();
-        try{
-            BufferedReader bw = new BufferedReader(new FileReader(new File("accounts/accounts.txt")));
-            while((curLine = bw.readLine()) != null)
-            {
-                accNum.add(curLine.split("!")[curLine.split("!").length-1].split(" ")[2]);
-            }
-
-            bw.close();
-        }
-        catch (IOException e){
-            e.printStackTrace();
-        }
     }
 
     public static int subDirCount(File dir)
     {
-        String[] dirs = dir.list(new FilenameFilter() {
-            @Override
-            public boolean accept(File file, String s) {
-                return new File(file, s).isDirectory();
-            }
-        });
+        String[] dirs = dir.list((file, s) -> new File(file, s).isDirectory());
 
         assert dirs != null : "NullPointerException occured";
         return dirs.length;
@@ -142,8 +109,10 @@ public class FileAlgorithms {
         //TODO COMPLETE THIS METHOD TO CREATE TRANSACTION FILES
     }
 
-
-    public static ArrayList<String> getAccNum() {
-        return accNum;
+    public static Map<String, String> getNumPeselPair() {
+        return numPeselPair;
+    }
+    public static ArrayList<String> getNumPeselPairKeys() {
+        return new ArrayList<>(numPeselPair.keySet());
     }
 }
