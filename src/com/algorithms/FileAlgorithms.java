@@ -198,6 +198,7 @@ public class FileAlgorithms {
 
     static void addSubBalance(String acc, double amount, boolean sub) throws IOException
     {
+        //TODO check why sometimes balance don't subtract properly
         double nBalance;
         if(sub) nBalance = readBalance(acc)-amount;
         else nBalance = readBalance(acc)+amount;
@@ -221,4 +222,5 @@ public class FileAlgorithms {
     public static Map<String, String> getsAccNum() {
         return sAccNum;
     }
+    //TODO CREATE METHOD TO ADD BALANCE AFTER SOME TIME IN SAVINGS ACCOUNT
 }
