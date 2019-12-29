@@ -2,6 +2,7 @@ package com.gui.ui;
 
 import com.gui.actions.ButtonActions;
 import com.gui.styles.*;
+import javafx.scene.layout.Pane;
 
 import javax.swing.*;
 import java.awt.*;
@@ -40,8 +41,11 @@ public class AppForm extends JFrame {
         PanelComponents.getpField().setName("Password!");
         PanelComponents.gettNameField().setName("Name!");
         PanelComponents.gettSurnameField().setName("Surname!");
-        PanelComponents.getAmount().setName("Amount!");
-        PanelComponents.getEnterAccNum().setName("AccountNum!");
+        PanelComponents.getAmount().setName("AMOUNT");
+        PanelComponents.getEnterAccNum().setName("SELECTEDACC");
+        PanelComponents.getDesc().setName("DESC");
+        PanelComponents.getTitle().setName("TITLE");
+        PanelComponents.getDepositCode().setName("DEPOCODE");
 
         PanelComponents.getbLogin().addActionListener(new ButtonActions.changePanelStyle(mainPanel,
                 PanelComponents.getWelcomeMainComps()));
@@ -73,4 +77,5 @@ public class AppForm extends JFrame {
     public static void setThisState(int state) {
         AppForm.state = state;
     }
+
 }

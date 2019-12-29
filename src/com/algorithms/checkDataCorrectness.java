@@ -18,7 +18,14 @@ public class checkDataCorrectness {
 
     public static boolean checkAccNum(String accNum)
     {
+        boolean r =  accNum.matches("[12]\\s*0000\\s*\\d{4}");
+        if(r)
+        {
+            String test = Algs.accNumCorrectFormat(accNum);
+            return FileAlgorithms.getNumPeselPair().containsKey(test);
+        }
 
+        return false;
     }
 
     public static boolean passwordPeselMatch(String user, String password)

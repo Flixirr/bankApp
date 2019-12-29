@@ -1,5 +1,7 @@
 package com.algorithms;
 
+import com.gui.ui.AppForm;
+
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -117,10 +119,27 @@ public class FileAlgorithms {
         return files.length;
     }
 
-    public static void addTransactionFile(String transactionID, String amount, String desc, String PESEL)
+    public static void addTransactionFile(String transactionID, String amount, String desc, String title,
+                                          String target, String from)
     {
-        File transaction = new File("accounts/"+PESEL+'/'+transactionID+".txt");
-        //TODO COMPLETE THIS METHOD TO CREATE TRANSACTION FILES
+        File transactionFrom = new File("accounts/"+numPeselPair.get(from)+'/'+transactionID+".txt");
+        try {
+            BufferedWriter bw = new BufferedWriter(new FileWriter(transactionFrom));
+            bw.write("TITLE!"+title+"!AMOUNT!"+amount+"!DESC!"+desc);
+            bw.flush();
+            bw.close();
+            if(AppForm.getThisState() == 2)
+            {
+                bw = new BufferedWriter(new FileWriter(new File("accounts/"+numPeselPair.get(target)+'/'+transactionID+".txt")));
+                bw.write("TITLE!"+title+"!AMOUNT!"+amount+"!DESC!"+desc);
+                bw.flush();
+                bw.close();
+            }
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
     }
 
     public static Map<String, String> getNumPeselPair() {

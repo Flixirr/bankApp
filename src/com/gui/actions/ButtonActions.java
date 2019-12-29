@@ -1,6 +1,6 @@
 package com.gui.actions;
 
-import com.algorithms.ComponentByName;
+import com.algorithms.Algs;
 import com.algorithms.FileAlgorithms;
 import com.algorithms.NumGenerator;
 import com.algorithms.checkDataCorrectness;
@@ -74,14 +74,15 @@ public class ButtonActions {
 
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
-            panel.removeAll();
             if(AppForm.getThisState() == 1)
             {
+                panel.removeAll();
                 Styles.accountPanelComps(panel, PanelComponents.getTransactionAcc());
                 AppForm.setThisState(2);
             }
             else if (AppForm.getThisState() == 3)
             {
+                panel.removeAll();
                 Styles.accountPanelComps(panel, PanelComponents.getTransactionSavAcc());
                 AppForm.setThisState(4);
             }
@@ -107,8 +108,8 @@ public class ButtonActions {
         }
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
-            PESEL = ((JTextField) ComponentByName.getComponentByName(panel, "PESEL!")).getText();
-            password = ((JTextField) ComponentByName.getComponentByName(panel, "Password!")).getText();
+            PESEL = ((JTextField) Algs.getComponentByName(panel, "PESEL!")).getText();
+            password = ((JTextField) Algs.getComponentByName(panel, "Password!")).getText();
             if(checkDataCorrectness.passwordPeselMatch(PESEL, password)) {
                 FileAlgorithms.setNumPeselPair();
                 PanelComponents.getAccNumInt().setText(FileAlgorithms.getAccNum().get(PESEL));
@@ -125,8 +126,8 @@ public class ButtonActions {
             }
             else
             {
-                ((JTextField) ComponentByName.getComponentByName(panel, "PESEL!")).setText("");
-                ((JTextField) ComponentByName.getComponentByName(panel, "Password!")).setText("");
+                ((JTextField) Algs.getComponentByName(panel, "PESEL!")).setText("");
+                ((JTextField) Algs.getComponentByName(panel, "Password!")).setText("");
                 showMessageDialog(null, "PESEL or password incorrect.");
             }
         }
@@ -144,7 +145,8 @@ public class ButtonActions {
         //1, 3, 5 acc choice, 0, 2, 4 panels with submit btn
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
-            if(AppForm.getThisState() == 0)
+            int state = AppForm.getThisState();
+            if(state == 0)
             {
                 FileAlgorithms.setNumPeselPair();
                 for(Component co: main.getComponents())
@@ -159,13 +161,28 @@ public class ButtonActions {
                 fields.put("SANUM!", NumGenerator.generateSAccNum());
                 FileAlgorithms.accountRegFile(fields);
             }
-            else if(AppForm.getThisState() == 2)
+            else if(state == 2)
             {
-                //TODO: TRANSACTION FROM ACCOUNT SUBMIT
+                String desc = ((JTextField) Algs.getComponentByName(main, "DESC")).getText();
+                String title = ((JTextField) Algs.getComponentByName(main, "TITLE")).getText();
+                String amount = ((JTextField) Algs.getComponentByName(main, "AMOUNT")).getText();
+                String target = ((JTextField) Algs.getComponentByName(main, "SELECTEDACC")).getText();
+                if(checkDataCorrectness.checkAccNum(target))
+                {
+                    String id = NumGenerator.generateTransactionNum(PanelComponents.getAccNumInt().getText());
+                    FileAlgorithms.addTransactionFile(id, amount, desc, title, target, PanelComponents.getAccNumInt().getText());
+                }
+                else {
+                    showMessageDialog(null, "Provided account number is incorrect");
+                }
             }
-            else if(AppForm.getThisState() == 4)
-            {
-
+            else if(state == 4) {
+                String desc = ((JTextField) Algs.getComponentByName(main, "DESC")).getText();
+                String title = ((JTextField) Algs.getComponentByName(main, "TITLE")).getText();
+                String amount = ((JTextField) Algs.getComponentByName(main, "AMOUNT")).getText();
+                String target = PanelComponents.getAccNumInt().getText();
+                String id = NumGenerator.generateTransactionNum(PanelComponents.getsAccNumInt().getText());
+                FileAlgorithms.addTransactionFile(id, amount, desc, title, target, PanelComponents.getAccNumInt().getText());
             }
         }
     }

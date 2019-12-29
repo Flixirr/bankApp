@@ -252,4 +252,16 @@ public class PanelComponents {
     public static ArrayList<Component> getTransactionSavAcc() {
         return transactionSavAcc;
     }
+
+    public static JTextField getDepositCode() {
+        return depositCode;
+    }
+
+    public static JTextField getDesc() {
+        return desc;
+    }
+
+    public static JTextField getTitle() {
+        return title;
+    }
 }
