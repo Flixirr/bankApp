@@ -23,6 +23,17 @@ public class Algs {
         return comps.get(name);
     }
 
+    public static void clearComps(JPanel panel)
+    {
+        for(Component co: panel.getComponents())
+        {
+            if(co instanceof JTextField)
+            {
+                ((JTextField) co).setText("");
+            }
+        }
+    }
+
     public static String accNumCorrectFormat(String num)
     {
         String result = num.replace(" ", "");

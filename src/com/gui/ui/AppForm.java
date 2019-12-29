@@ -22,6 +22,7 @@ public class AppForm extends JFrame {
     JPanel mainPanel = new mainPanel();
 
     private static int state = 0;
+    private static String loggedPesel = "";
 
     public AppForm(String title, int width) {
         super(title);
@@ -57,13 +58,10 @@ public class AppForm extends JFrame {
                 PanelComponents.getLoggedToolbarButtons(), PanelComponents.getAccountPanel()));
 
         PanelComponents.getAccount().addActionListener(new ButtonActions.changeAccountStyle(mainPanel,
-                PanelComponents.getAccountPanel(), 1));
+                PanelComponents.getAccountPanel(), 1, "acc.txt"));
 
         PanelComponents.getSavAccount().addActionListener(new ButtonActions.changeAccountStyle(mainPanel,
-                PanelComponents.getSavAccountPanel(), 3));
-
-        PanelComponents.getCashLoan().addActionListener(new ButtonActions.changeAccountStyle(mainPanel,
-                PanelComponents.getLoanComps(), 5));
+                PanelComponents.getSavAccountPanel(), 3, "savacc.txt"));
 
         PanelComponents.getSubmit().addActionListener(new ButtonActions.submit(mainPanel));
 
@@ -78,4 +76,11 @@ public class AppForm extends JFrame {
         AppForm.state = state;
     }
 
+    public static void setLoggedPesel(String loggedPesel) {
+        AppForm.loggedPesel = loggedPesel;
+    }
+
+    public static String getLoggedPesel() {
+        return loggedPesel;
+    }
 }

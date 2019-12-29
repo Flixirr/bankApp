@@ -52,6 +52,6 @@ public class NumGenerator {
         String newAccNum = accNum.replace(" ", "");
         int tNum = FileAlgorithms.fileCount(new File("accounts/"+FileAlgorithms.getNumPeselPair().get(accNum)));
 
-        return newAccNum+ (tNum + 1);
+        return newAccNum+ (tNum - 1);
     }
 }

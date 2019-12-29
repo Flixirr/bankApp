@@ -45,12 +45,14 @@ public class ButtonActions {
         private JPanel panel;
         private ArrayList<Component> comps;
         int state;
+        String accType; //acctype.txt or savacctype.txt
 
-        public changeAccountStyle(JPanel panel, ArrayList<Component> comps, int state)
+        public changeAccountStyle(JPanel panel, ArrayList<Component> comps, int state, String accType)
         {
             this.panel = panel;
             this.comps = comps;
             this.state = state;
+            this.accType = accType;
         }
 
         @Override
@@ -58,6 +60,9 @@ public class ButtonActions {
             AppForm.setThisState(state);
             panel.removeAll();
             Styles.accountPanelComps(panel, comps);
+            PanelComponents.getcBalanceInt().setText(
+                    Double.toString(FileAlgorithms.readBalance("accounts/"+AppForm.getLoggedPesel()+"/"+accType))
+            );
             panel.repaint();
             panel.revalidate();
         }
@@ -114,6 +119,10 @@ public class ButtonActions {
                 FileAlgorithms.setNumPeselPair();
                 PanelComponents.getAccNumInt().setText(FileAlgorithms.getAccNum().get(PESEL));
                 PanelComponents.getsAccNumInt().setText(FileAlgorithms.getsAccNum().get(PESEL));
+                PanelComponents.getcBalanceInt().setText(
+                        Double.toString(FileAlgorithms.readBalance("accounts/"+PESEL+"/acc.txt"))
+                );
+                AppForm.setLoggedPesel(PESEL);
                 AppForm.setThisState(1);
                 panel.removeAll();
                 sidebar.removeAll();
@@ -136,7 +145,7 @@ public class ButtonActions {
     public static class submit implements ActionListener
     {
         JPanel main;
-        Map<String, String> fields = new LinkedHashMap<String, String>();
+        Map<String, String> fields = new LinkedHashMap<>();
 
         public submit(JPanel panel)
         {
@@ -148,7 +157,6 @@ public class ButtonActions {
             int state = AppForm.getThisState();
             if(state == 0)
             {
-                FileAlgorithms.setNumPeselPair();
                 for(Component co: main.getComponents())
                 {
                     if(co instanceof JTextField)
@@ -160,17 +168,20 @@ public class ButtonActions {
                 fields.put("ANUM!", NumGenerator.generateAccNum());
                 fields.put("SANUM!", NumGenerator.generateSAccNum());
                 FileAlgorithms.accountRegFile(fields);
+                FileAlgorithms.setNumPeselPair();
             }
             else if(state == 2)
             {
                 String desc = ((JTextField) Algs.getComponentByName(main, "DESC")).getText();
                 String title = ((JTextField) Algs.getComponentByName(main, "TITLE")).getText();
                 String amount = ((JTextField) Algs.getComponentByName(main, "AMOUNT")).getText();
-                String target = ((JTextField) Algs.getComponentByName(main, "SELECTEDACC")).getText();
+                String target =
+                        Algs.accNumCorrectFormat(((JTextField) Algs.getComponentByName(main, "SELECTEDACC")).getText());
                 if(checkDataCorrectness.checkAccNum(target))
                 {
                     String id = NumGenerator.generateTransactionNum(PanelComponents.getAccNumInt().getText());
                     FileAlgorithms.addTransactionFile(id, amount, desc, title, target, PanelComponents.getAccNumInt().getText());
+                    Algs.clearComps(main);
                 }
                 else {
                     showMessageDialog(null, "Provided account number is incorrect");
@@ -183,6 +194,7 @@ public class ButtonActions {
                 String target = PanelComponents.getAccNumInt().getText();
                 String id = NumGenerator.generateTransactionNum(PanelComponents.getsAccNumInt().getText());
                 FileAlgorithms.addTransactionFile(id, amount, desc, title, target, PanelComponents.getAccNumInt().getText());
+                Algs.clearComps(main);
             }
         }
     }

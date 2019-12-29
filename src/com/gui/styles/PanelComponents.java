@@ -71,7 +71,6 @@ public class PanelComponents {
         {
             add(account);
             add(savAccount);
-            add(cashLoan);
             add(history);
         }
     };
@@ -99,18 +98,6 @@ public class PanelComponents {
             add(deposit);
         }
     };
-
-    private static ArrayList<Component> loanComps = new ArrayList<>()
-    {
-        {
-            add(enterAmount);
-            add(amount);
-            add(accNum);
-            add(enterAccNum);
-            add(submit);
-        }
-    };
-
 
     private static ArrayList<Component> welcomeMainComps = new ArrayList<>() {
         {
@@ -202,11 +189,6 @@ public class PanelComponents {
 
     public static ArrayList<Component> getSavAccountPanel() {
         return savAccountPanel;
-    }
-
-
-    public static ArrayList<Component> getLoanComps() {
-        return loanComps;
     }
 
     public static JPasswordField getpField() {

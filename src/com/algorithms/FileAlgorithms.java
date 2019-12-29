@@ -3,12 +3,7 @@ package com.algorithms;
 import com.gui.ui.AppForm;
 
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import static javax.swing.JOptionPane.showMessageDialog;
 
@@ -61,6 +56,14 @@ public class FileAlgorithms {
                 bWriterAcc.write('\n');
                 bWriterAcc.flush();
                 bWriterAcc.close();
+                bWriterAcc = new BufferedWriter(new FileWriter(new File("accounts/"+data.get("PESEL!")+"/acc.txt")));
+                bWriterAcc.write("0");
+                bWriterAcc.flush();
+                bWriterAcc.close();
+                bWriterAcc = new BufferedWriter(new FileWriter(new File("accounts/"+data.get("PESEL!")+"/savacc.txt")));
+                bWriterAcc.write("0");
+                bWriterAcc.flush();
+                bWriterAcc.close();
             }
             else
             {
@@ -105,6 +108,12 @@ public class FileAlgorithms {
 
     public static int subDirCount(File dir)
     {
+        File dirMain = new File("accounts");
+
+        if(!dirMain.exists())
+        {
+            dir.mkdir();
+        }
         String[] dirs = dir.list((file, s) -> new File(file, s).isDirectory());
 
         assert dirs != null : "NullPointerException occured";
@@ -124,22 +133,78 @@ public class FileAlgorithms {
     {
         File transactionFrom = new File("accounts/"+numPeselPair.get(from)+'/'+transactionID+".txt");
         try {
-            BufferedWriter bw = new BufferedWriter(new FileWriter(transactionFrom));
-            bw.write("TITLE!"+title+"!AMOUNT!"+amount+"!DESC!"+desc);
-            bw.flush();
-            bw.close();
             if(AppForm.getThisState() == 2)
             {
-                bw = new BufferedWriter(new FileWriter(new File("accounts/"+numPeselPair.get(target)+'/'+transactionID+".txt")));
-                bw.write("TITLE!"+title+"!AMOUNT!"+amount+"!DESC!"+desc);
-                bw.flush();
-                bw.close();
+                if(readBalance("accounts/"+numPeselPair.get(from)+"/acc.txt") < Double.parseDouble(amount))
+                {
+                    showMessageDialog(null, "Insufficient funds");
+                }
+                else {
+                    BufferedWriter bw = new BufferedWriter(new FileWriter(transactionFrom));
+                    bw.write("TITLE!" + title + "!AMOUNT!" + amount + "!DESC!" + desc);
+                    bw.flush();
+                    bw.close();
+
+                    bw = new BufferedWriter(new FileWriter(new File("accounts/" + numPeselPair.get(target) + '/' + transactionID + ".txt")));
+                    bw.write("TITLE!" + title + "!AMOUNT!" + amount + "!DESC!" + desc);
+                    bw.flush();
+                    bw.close();
+
+                    addSubBalance("accounts/"+numPeselPair.get(from)+"/acc.txt", Double.parseDouble(amount), true);
+                    if(target.charAt(0) == '1') addSubBalance("accounts/"+numPeselPair.get(target)+"/acc.txt",
+                            Double.parseDouble(amount), false);
+                    else addSubBalance("accounts/"+numPeselPair.get(target)+"/savacc.txt",
+                            Double.parseDouble(amount), false);
+                }
+            }
+            else if(AppForm.getThisState() == 4)
+            {
+                if(readBalance("accounts/"+numPeselPair.get(from)+"/savacc.txt") < Double.parseDouble(amount))
+                {
+                    showMessageDialog(null, "Insufficient funds");
+                }
+                else {
+                    BufferedWriter bw = new BufferedWriter(new FileWriter(transactionFrom));
+                    bw.write("TITLE!" + title + "!AMOUNT!" + amount + "!DESC!" + desc);
+                    bw.flush();
+                    bw.close();
+                    addSubBalance("accounts/"+numPeselPair.get(from)+"/acc.txt", Double.parseDouble(amount), false);
+                    addSubBalance("accounts/"+numPeselPair.get(from)+"/savacc.txt", Double.parseDouble(amount), true);
+                }
             }
         }
         catch(IOException e)
         {
             e.printStackTrace();
         }
+    }
+
+    public static double readBalance(String acc)
+    {
+        try
+        {
+            BufferedReader br = new BufferedReader(new FileReader(new File(acc)));
+            double balance;
+            balance = Double.parseDouble(br.readLine());
+            br.close();
+            return balance;
+        }
+        catch (IOException e)
+        {
+            showMessageDialog(null, e.getMessage());
+            return 0;
+        }
+    }
+
+    static void addSubBalance(String acc, double amount, boolean sub) throws IOException
+    {
+        double nBalance;
+        if(sub) nBalance = readBalance(acc)-amount;
+        else nBalance = readBalance(acc)+amount;
+        BufferedWriter bw = new BufferedWriter(new FileWriter(new File(acc)));
+        bw.write(Double.toString(nBalance));
+        bw.flush();
+        bw.close();
     }
 
     public static Map<String, String> getNumPeselPair() {
