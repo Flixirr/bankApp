@@ -23,6 +23,7 @@ public class NumGenerator {
 
     public static String generateAccNum()
     {
+        FileAlgorithms.setNumPeselPair();
         int sz = getNumPeselPairKeys().size();
         if(FileAlgorithms.subDirCount(new File("accounts")) == 0)
         {

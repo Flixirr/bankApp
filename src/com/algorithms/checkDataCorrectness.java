@@ -2,25 +2,30 @@ package com.algorithms;
 
 import java.io.File;
 import java.util.Map;
+import static javax.swing.JOptionPane.showMessageDialog;
 
 public class checkDataCorrectness {
 
-    //IMPORTANT [1 - surname, 3 - password, 5 - pesel, 7 - name]
+    public static boolean checkForDataType(String PESEL, String password, String name, String surname) {
+        String numReg = ".*[0-9]+.*";
+        String letRet = ".*[a-zA-Z]+.*";
+        String fullLetReg = "[a-zA-Z]+";
+        boolean pCheck = PESEL.matches("\\d{11}");
+        boolean passCheck = password.matches(numReg) && password.matches(letRet);
+        boolean nameCheck = name.matches(fullLetReg);
+        boolean surnCheck = surname.matches(fullLetReg);
 
-    String PESEL, name, surname, password;
+        if(!passCheck) showMessageDialog(null, "Password must contain at least one letter and one number!");
+        if(!pCheck) showMessageDialog(null, "PESEL must be 11 numbers long");
+        if(!nameCheck) showMessageDialog(null, "Name must contain only letters!");
+        if(!surnCheck) showMessageDialog(null, "Surname must contain only letters!");
 
-    public static boolean checkPESELAndIfAdult()
-    {
-        boolean checkResult = true;
-        //TODO make this shit work
-        return checkResult;
+        return passCheck && pCheck && nameCheck && surnCheck;
     }
 
-    public static boolean checkAccNum(String accNum)
-    {
+    public static boolean checkAccNum(String accNum) {
         boolean r =  accNum.matches("[12]\\s*0000\\s*\\d{4}");
-        if(r)
-        {
+        if(r) {
             String test = Algs.accNumCorrectFormat(accNum);
             return FileAlgorithms.getNumPeselPair().containsKey(test);
         }

@@ -18,15 +18,13 @@ public class FileAlgorithms {
     private static Map<String, String> accNum = new HashMap<>();
     private static Map<String, String> sAccNum = new HashMap<>();
 
-    public static void setNumPeselPair()
-    {
+    public static void setNumPeselPair() {
         numPeselPair.clear();
         String curLine;
         String holder[];
         try{
             BufferedReader bw = new BufferedReader(new FileReader(new File("accounts/accounts.txt")));
-            while((curLine = bw.readLine()) != null)
-            {
+            while((curLine = bw.readLine()) != null) {
                 holder = curLine.split("!");
                 numPeselPair.put(holder[holder.length-3], holder[5]);
                 accNum.put(holder[5], holder[holder.length-3]);
@@ -40,8 +38,7 @@ public class FileAlgorithms {
         }
     }
 
-    public static void accountRegFile(Map<String, String> data)
-    {
+    public static void accountRegFile(Map<String, String> data) {
         try {
             dir = new File("accounts/"+data.get("PESEL!"));
 
@@ -61,12 +58,11 @@ public class FileAlgorithms {
                 bWriterAcc.flush();
                 bWriterAcc.close();
                 bWriterAcc = new BufferedWriter(new FileWriter(new File("accounts/"+data.get("PESEL!")+"/savacc.txt")));
-                bWriterAcc.write("0");
+                bWriterAcc.write("100");
                 bWriterAcc.flush();
                 bWriterAcc.close();
             }
-            else
-            {
+            else {
                 showMessageDialog(null, "This account already exists!");
             }
         }
@@ -75,8 +71,7 @@ public class FileAlgorithms {
         }
     }
 
-    public static Map<String, String> parseFileToStringMap(File data)
-    {
+    public static Map<String, String> parseFileToStringMap(File data) {
         Map<String, String> result = new HashMap<>();
         BufferedReader bw = null;
         String curLine;
@@ -84,8 +79,7 @@ public class FileAlgorithms {
         try{
             FileReader fr = new FileReader(data);
             bw = new BufferedReader(fr);
-            while((curLine = bw.readLine()) != null)
-            {
+            while((curLine = bw.readLine()) != null) {
                 keyAndVal = curLine.split("!");
                 result.put(keyAndVal[5], keyAndVal[7]);
             }
@@ -93,25 +87,21 @@ public class FileAlgorithms {
         catch (IOException e){
             e.printStackTrace();
         }
-        finally
-        {
+        finally {
             try{
                 if(bw != null)
                     bw.close();
-            } catch (IOException e)
-            {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
         return result;
     }
 
-    public static int subDirCount(File dir)
-    {
+    public static int subDirCount(File dir) {
         File dirMain = new File("accounts");
 
-        if(!dirMain.exists())
-        {
+        if(!dirMain.exists()) {
             dir.mkdir();
         }
         String[] dirs = dir.list((file, s) -> new File(file, s).isDirectory());
@@ -120,8 +110,7 @@ public class FileAlgorithms {
         return dirs.length;
     }
 
-    public static int fileCount(File dir)
-    {
+    public static int fileCount(File dir) {
         String[] files = dir.list((file, s) -> new File(file, s).isFile());
 
         assert files != null;
@@ -129,14 +118,11 @@ public class FileAlgorithms {
     }
 
     public static void addTransactionFile(String transactionID, String amount, String desc, String title,
-                                          String target, String from)
-    {
+                                          String target, String from) {
         File transactionFrom = new File("accounts/"+numPeselPair.get(from)+'/'+transactionID+".txt");
         try {
-            if(AppForm.getThisState() == 2)
-            {
-                if(readBalance("accounts/"+numPeselPair.get(from)+"/acc.txt") < Double.parseDouble(amount))
-                {
+            if(AppForm.getThisState() == 2) {
+                if(readBalance("accounts/"+numPeselPair.get(from)+"/acc.txt") < Double.parseDouble(amount)) {
                     showMessageDialog(null, "Insufficient funds");
                 }
                 else {
@@ -150,17 +136,14 @@ public class FileAlgorithms {
                     bw.flush();
                     bw.close();
 
-                    addSubBalance("accounts/"+numPeselPair.get(from)+"/acc.txt", Double.parseDouble(amount), true);
-                    if(target.charAt(0) == '1') addSubBalance("accounts/"+numPeselPair.get(target)+"/acc.txt",
-                            Double.parseDouble(amount), false);
-                    else addSubBalance("accounts/"+numPeselPair.get(target)+"/savacc.txt",
-                            Double.parseDouble(amount), false);
+                    if(target.charAt(0) == '1') addSubBalance("accounts/"+numPeselPair.get(target)+"/acc.txt", "accounts/"+numPeselPair.get(from)+"/acc.txt",
+                            Double.parseDouble(amount));
+                    else addSubBalance("accounts/"+numPeselPair.get(target)+"/savacc.txt", "accounts/"+numPeselPair.get(from)+"/acc.txt",
+                            Double.parseDouble(amount));
                 }
             }
-            else if(AppForm.getThisState() == 4)
-            {
-                if(readBalance("accounts/"+numPeselPair.get(from)+"/savacc.txt") < Double.parseDouble(amount))
-                {
+            else if(AppForm.getThisState() == 4) {
+                if(readBalance("accounts/"+numPeselPair.get(from)+"/savacc.txt") < Double.parseDouble(amount)) {
                     showMessageDialog(null, "Insufficient funds");
                 }
                 else {
@@ -168,44 +151,52 @@ public class FileAlgorithms {
                     bw.write("TITLE!" + title + "!AMOUNT!" + amount + "!DESC!" + desc);
                     bw.flush();
                     bw.close();
-                    addSubBalance("accounts/"+numPeselPair.get(from)+"/acc.txt", Double.parseDouble(amount), false);
-                    addSubBalance("accounts/"+numPeselPair.get(from)+"/savacc.txt", Double.parseDouble(amount), true);
+                    addSubBalance("accounts/"+numPeselPair.get(from)+"/acc.txt", "accounts/"+numPeselPair.get(from)+"/savacc.txt", Double.parseDouble(amount));
                 }
             }
         }
-        catch(IOException e)
-        {
+        catch(IOException e) {
             e.printStackTrace();
         }
     }
 
-    public static double readBalance(String acc)
-    {
-        try
-        {
+    public static double readBalance(String acc) {
+        try {
             BufferedReader br = new BufferedReader(new FileReader(new File(acc)));
             double balance;
             balance = Double.parseDouble(br.readLine());
             br.close();
             return balance;
         }
-        catch (IOException e)
-        {
+        catch (IOException e) {
             showMessageDialog(null, e.getMessage());
             return 0;
         }
     }
 
-    static void addSubBalance(String acc, double amount, boolean sub) throws IOException
-    {
-        //TODO check why sometimes balance don't subtract properly
-        double nBalance;
-        if(sub) nBalance = readBalance(acc)-amount;
-        else nBalance = readBalance(acc)+amount;
-        BufferedWriter bw = new BufferedWriter(new FileWriter(new File(acc)));
+    static void addSubBalance(String targetAcc, String originAcc, double amount) throws IOException {
+        double nBalance, oBal = readBalance(originAcc);
+        nBalance = ((double) ((oBal*100-amount*100)/100));
+        BufferedWriter bw = new BufferedWriter(new FileWriter(new File(originAcc)));
         bw.write(Double.toString(nBalance));
-        bw.flush();
         bw.close();
+        oBal = readBalance(targetAcc);
+        nBalance = ((double) ((oBal*100+amount*100)/100));
+        bw = new BufferedWriter(new FileWriter(new File(targetAcc)));
+        bw.write(Double.toString(nBalance));
+        bw.close();
+    }
+
+    public static void savingsBalance(String targetAcc, boolean logged){
+        try {
+            BufferedWriter bw = new BufferedWriter(new FileWriter(new File(targetAcc)));
+            double curBal;
+            while (logged) {
+                System.out.println("ok");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static Map<String, String> getNumPeselPair() {
@@ -222,5 +213,4 @@ public class FileAlgorithms {
     public static Map<String, String> getsAccNum() {
         return sAccNum;
     }
-    //TODO CREATE METHOD TO ADD BALANCE AFTER SOME TIME IN SAVINGS ACCOUNT
 }

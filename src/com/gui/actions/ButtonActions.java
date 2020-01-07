@@ -132,6 +132,7 @@ public class ButtonActions {
                 panel.repaint();
                 sidebar.revalidate();
                 panel.revalidate();
+                FileAlgorithms.savingsBalance("accounts/"+PESEL+"/savacc.txt", true);
             }
             else
             {
@@ -155,30 +156,27 @@ public class ButtonActions {
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
             int state = AppForm.getThisState();
-            if(state == 0)
-            {
-                for(Component co: main.getComponents())
-                {
-                    if(co instanceof JTextField)
-                    {
+            if(state == 0) {
+                for(Component co: main.getComponents()) {
+                    if(co instanceof JTextField) {
                         fields.put(co.getName(), ((JTextField) co).getText());
                         ((JTextField) co).setText("");
                     }
                 }
-                fields.put("ANUM!", NumGenerator.generateAccNum());
-                fields.put("SANUM!", NumGenerator.generateSAccNum());
-                FileAlgorithms.accountRegFile(fields);
-                FileAlgorithms.setNumPeselPair();
+                if(checkDataCorrectness.checkForDataType(fields.get("PESEL!"), fields.get("Password!"), fields.get("Name!"), fields.get("Surname!"))) {
+                    fields.put("ANUM!", NumGenerator.generateAccNum());
+                    fields.put("SANUM!", NumGenerator.generateSAccNum());
+                    FileAlgorithms.accountRegFile(fields);
+                    FileAlgorithms.setNumPeselPair();
+                }
             }
-            else if(state == 2)
-            {
+            else if(state == 2) {
                 String desc = ((JTextField) Algs.getComponentByName(main, "DESC")).getText();
                 String title = ((JTextField) Algs.getComponentByName(main, "TITLE")).getText();
                 String amount = ((JTextField) Algs.getComponentByName(main, "AMOUNT")).getText();
                 String target =
                         Algs.accNumCorrectFormat(((JTextField) Algs.getComponentByName(main, "SELECTEDACC")).getText());
-                if(checkDataCorrectness.checkAccNum(target))
-                {
+                if(checkDataCorrectness.checkAccNum(target)) {
                     String id = NumGenerator.generateTransactionNum(PanelComponents.getAccNumInt().getText());
                     FileAlgorithms.addTransactionFile(id, amount, desc, title, target, PanelComponents.getAccNumInt().getText());
                     Algs.clearComps(main);
@@ -200,6 +198,5 @@ public class ButtonActions {
     }
 
     //TODO CREATE LOG OUT BUTTON
-    //TODO CREATE DEPOSIT
 
 }
