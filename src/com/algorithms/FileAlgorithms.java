@@ -9,11 +9,6 @@ import static javax.swing.JOptionPane.showMessageDialog;
 
 public class FileAlgorithms {
 
-    static File accounts;
-    static File dir;
-    static FileWriter writerAccounts;
-    static BufferedWriter bWriterAcc;
-
     private static TreeMap<String, String> numPeselPair = new TreeMap<>();
     private static Map<String, String> accNum = new HashMap<>();
     private static Map<String, String> sAccNum = new HashMap<>();
@@ -39,6 +34,11 @@ public class FileAlgorithms {
     }
 
     public static void accountRegFile(Map<String, String> data) {
+        File accounts;
+        File dir;
+        FileWriter writerAccounts;
+        BufferedWriter bWriterAcc;
+        
         try {
             dir = new File("accounts/"+data.get("PESEL!"));
 

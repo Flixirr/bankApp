@@ -2,7 +2,6 @@ package com.gui.ui;
 
 import com.gui.actions.ButtonActions;
 import com.gui.styles.*;
-import javafx.scene.layout.Pane;
 
 import javax.swing.*;
 import java.awt.*;

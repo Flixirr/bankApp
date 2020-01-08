@@ -1,5 +1,8 @@
 package com.gui.styles;
 
+import com.gui.labelObserver.AccountBalance;
+import com.gui.labelObserver.SavAccountBalance;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
@@ -19,18 +22,23 @@ public class PanelComponents {
     private static JButton account = new JButton("Account");
     private static JButton savAccount = new JButton("Savings account");
 
-    static JPasswordField pField = new JPasswordField();
+    private static JPasswordField pField = new JPasswordField();
 
-    static JTextField tField = new JTextField(), tSurnameField = new JTextField(), tNameField = new JTextField(),
-            amount = new JTextField(), enterAccNum = new JTextField(), depositCode = new JTextField(), title =
-            new JTextField(), desc = new JTextField();
+    private static JTextField tField = new JTextField(),
+            tSurnameField = new JTextField(),
+            tNameField = new JTextField(),
+            amount = new JTextField(),
+            enterAccNum = new JTextField(),
+            depositCode = new JTextField(),
+            title = new JTextField(),
+            desc = new JTextField();
 
-    static JLabel pesel = new JLabel("PESEL"), password = new JLabel("PASSWORD"),
+    private static JLabel pesel = new JLabel("PESEL"), password = new JLabel("PASSWORD"),
             surname = new JLabel("SURNAME"), name = new JLabel("NAME"), cBalance = new JLabel("Current balance: "),
-            cBalanceInt = new JLabel("0"), enterAmount = new JLabel("Enter amount "), accNum = new JLabel(
-                    "Account number: "), accNumInt = new JLabel(), sAccNumInt = new JLabel("0"), warning =
-            new JLabel("WARNING! "), warnMsg = new JLabel("Transactions can only be made to main account"), titleLab
-            = new JLabel("Title"), descLab = new JLabel("Description");
+            enterAmount = new JLabel("Enter amount "), accNum = new JLabel("Account number: "),
+            accNumInt = new JLabel(), sAccNumInt = new JLabel("0"),
+            warning = new JLabel("WARNING! "), warnMsg = new JLabel("Transactions can only be made to main account"),
+            titleLab = new JLabel("Title"), descLab = new JLabel("Description");
 
     private static ArrayList<JButton> welcomeToolbarButtons = new ArrayList<>() {
         {
@@ -81,7 +89,7 @@ public class PanelComponents {
             add(accNum);
             add(accNumInt);
             add(cBalance);
-            add(cBalanceInt);
+            add(AccountBalance.getTxt());
             add(transaction);
             add(deposit);
         }
@@ -93,7 +101,7 @@ public class PanelComponents {
             add(accNum);
             add(sAccNumInt);
             add(cBalance);
-            add(cBalanceInt);
+            add(SavAccountBalance.getTxt());
             add(transaction);
             add(deposit);
         }
@@ -153,10 +161,6 @@ public class PanelComponents {
 
     public static JButton getTransaction() {
         return transaction;
-    }
-
-    public static JLabel getcBalanceInt() {
-        return cBalanceInt;
     }
 
     public static ArrayList<JButton> getLoggedToolbarButtons() {

@@ -132,7 +132,7 @@ public class ButtonActions {
                 panel.repaint();
                 sidebar.revalidate();
                 panel.revalidate();
-                FileAlgorithms.savingsBalance("accounts/"+PESEL+"/savacc.txt", true);
+                //FileAlgorithms.savingsBalance("accounts/"+PESEL+"/savacc.txt", true);
             }
             else
             {

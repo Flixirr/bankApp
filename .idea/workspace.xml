@@ -2,29 +2,139 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00b36b71-2c02-4361-a86a-333b037fc75a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/algorithms/FileData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/gui/labelObserver/AccountBalance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/gui/labelObserver/SavAccountBalance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/observers/Observer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/observers/Subject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/gui/effects/MouseEffects.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/gui/styles/Styles.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/gui/ui/AppForm.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/gui/ui/BankApp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/gui/ui/LoginPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/gui/ui/ToolbarLogin.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/algorithms/FileAlgorithms.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/algorithms/FileAlgorithms.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/algorithms/checkDataCorrectness.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/algorithms/checkDataCorrectness.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/actions/ButtonActions$changeAccountStyle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/actions/ButtonActions$changeAccountStyle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/actions/ButtonActions$changePanelStyle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/actions/ButtonActions$changePanelStyle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/actions/ButtonActions$loggedInForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/actions/ButtonActions$loggedInForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/actions/ButtonActions$submit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/actions/ButtonActions$submit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/actions/ButtonActions.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/actions/ButtonActions.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/effects/MouseEffects$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/effects/MouseEffects$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/effects/MouseEffects.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/effects/MouseEffects.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/Styles.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/Styles.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/ui/AppForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/ui/AppForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/ui/BankApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/ui/BankApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/ui/Sidebar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/ui/Sidebar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/ui/mainPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/ui/mainPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/algorithms/FileAlgorithms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/algorithms/FileAlgorithms.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/algorithms/NumGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/algorithms/NumGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/algorithms/checkDataCorrectness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/algorithms/checkDataCorrectness.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/algorithms/FileData.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/gui/actions/ButtonActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gui/actions/ButtonActions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gui/styles/PanelComponents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gui/styles/PanelComponents.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gui/ui/AppForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gui/ui/AppForm.java" afterDir="false" />
     </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/algorithms/FileAlgorithms.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="178" column="39" selection-start-line="178" selection-start-column="39" selection-end-line="178" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/observers/Subject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/observers/Observer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/algorithms/Algs.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/gui/styles/PanelComponents.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="129">
+              <caret line="163" column="5" selection-start-line="163" selection-start-column="5" selection-end-line="163" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/gui/labelObserver/AccountBalance.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/gui/labelObserver/SavAccountBalance.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/algorithms/checkDataCorrectness.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/algorithms/NumGenerator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -32,7 +142,131 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/com/gui/ui/AppForm.java" />
+        <option value="$PROJECT_DIR$/src/com/gui/actions/ButtonActions.java" />
+        <option value="$PROJECT_DIR$/accounts/12312312312/savacc.txt" />
+        <option value="$PROJECT_DIR$/src/com/algorithms/FileAlgorithms.java" />
+        <option value="$PROJECT_DIR$/accounts/32131231266/acc.txt" />
+        <option value="$PROJECT_DIR$/src/com/algorithms/Subject.java" />
+        <option value="$PROJECT_DIR$/src/com/observers/Subject.java" />
+        <option value="$PROJECT_DIR$/src/com/gui/labelObserver/AccountBalance.java" />
+        <option value="$PROJECT_DIR$/src/com/observers/Observer.java" />
+        <option value="$PROJECT_DIR$/src/com/gui/labelObserver/SavAccountBalance.java" />
+        <option value="$PROJECT_DIR$/src/com/gui/styles/PanelComponents.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
+  </component>
   <component name="ProjectId" id="1VI2FvnKg5vTqdmIK756Ywkca4i" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="bankApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bankApp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bankApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bankApp" type="462c0819:PsiDirectoryNode" />
+              <item name="accounts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bankApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bankApp" type="462c0819:PsiDirectoryNode" />
+              <item name="accounts" type="462c0819:PsiDirectoryNode" />
+              <item name="12312312312" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bankApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bankApp" type="462c0819:PsiDirectoryNode" />
+              <item name="accounts" type="462c0819:PsiDirectoryNode" />
+              <item name="32131231266" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bankApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bankApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bankApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bankApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bankApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bankApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="algorithms" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bankApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bankApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bankApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bankApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
+              <item name="actions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bankApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bankApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
+              <item name="labelObserver" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bankApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bankApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
+              <item name="styles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bankApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bankApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bankApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bankApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="ok" type="e9f4de52:FormNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -44,6 +278,18 @@
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="212" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager" selected="Application.BankApp">
     <configuration name="BankApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -168,14 +414,66 @@
     <option name="localTasksCounter" value="6" />
     <servers />
   </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32902467" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32902467" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32902467" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+    </layout>
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
             <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
               <option name="COLUMN_ORDER" />
             </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
           </value>
         </entry>
       </map>
@@ -264,5 +562,138 @@
     </state>
     <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1577652920951" />
     <state x="539" y="226" width="840" height="848" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1578390814689" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/accounts/32131231266/2000000021.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gui/ui/BankApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gui/ui/AppForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gui/actions/ButtonActions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="63" column="51" selection-start-line="63" selection-start-column="51" selection-end-line="63" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gui/ui/ok.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gui/ui/ok.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/32131231266/acc.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="4" lean-forward="true" selection-start-column="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/12312312312/savacc.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="3" selection-start-column="3" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/12312312312/acc.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/algorithms/FileData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/algorithms/NumGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/algorithms/Subject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gui/styles/Styles.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-672">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/observers/Subject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/algorithms/checkDataCorrectness.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/algorithms/FileAlgorithms.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="178" column="39" selection-start-line="178" selection-start-column="39" selection-end-line="178" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/algorithms/Algs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/observers/Observer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gui/labelObserver/AccountBalance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gui/labelObserver/SavAccountBalance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gui/styles/PanelComponents.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="163" column="5" selection-start-line="163" selection-start-column="5" selection-end-line="163" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
