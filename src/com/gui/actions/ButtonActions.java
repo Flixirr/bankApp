@@ -16,6 +16,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.List;
 
 import static javax.swing.JOptionPane.showMessageDialog;
 
@@ -27,8 +28,7 @@ public class ButtonActions {
     private static ArrayList<Observer> observers = new ArrayList<>();
     private static Thread savLogic = new Thread(new SavingsAccountThread("SavingsAccountLogic"));
 
-    public static class changePanelStyle implements ActionListener
-    {
+    public static class changePanelStyle implements ActionListener {
         private JPanel panel;
         private ArrayList<Component> comps;
 
@@ -49,8 +49,7 @@ public class ButtonActions {
         }
     }
 
-    public static class changeAccountStyle implements ActionListener
-    {
+    public static class changeAccountStyle implements ActionListener {
         private JPanel panel;
         private ArrayList<Component> comps;
         int state;
@@ -74,8 +73,7 @@ public class ButtonActions {
         }
     }
 
-    public static class transactionButton implements ActionListener
-    {
+    public static class transactionButton implements ActionListener {
         private JPanel panel;
 
         public transactionButton(JPanel panel)
@@ -102,8 +100,7 @@ public class ButtonActions {
         }
     }
 
-    public static class loggedInForm implements ActionListener
-    {
+    public static class loggedInForm implements ActionListener {
         private JPanel panel;
         private JPanel sidebar;
         private ArrayList<JButton> btns;
@@ -158,8 +155,7 @@ public class ButtonActions {
         }
     }
 
-    public static class submit implements ActionListener, Subject
-    {
+    public static class submit implements ActionListener, Subject {
         JPanel main;
         Map<String, String> fields = new LinkedHashMap<>();
 
@@ -262,6 +258,38 @@ public class ButtonActions {
             sidebar.revalidate();
             main.repaint();
             sidebar.repaint();
+        }
+    }
+
+    public static class history implements ActionListener {
+        JPanel main;
+
+        public history(JPanel main) {
+            this.main = main;
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent actionEvent) {
+            main.removeAll();
+            JScrollPane scrollPane = new JScrollPane(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+            main.add(scrollPane);
+            scrollPane.setPreferredSize(new Dimension(600, 500));
+
+            JPanel panel = new JPanel();
+            panel.setLayout(new GridBagLayout());
+            GridBagConstraints gbc = new GridBagConstraints();
+            gbc.insets = new Insets(0,10,0,0);
+
+            List<JLabel> labels = FileAlgorithms.getTransactions(PESEL);
+
+            for(int i = 0; i < labels.size(); i++) {
+                gbc.gridy = i;
+                panel.add(labels.get(i), gbc);
+            }
+            scrollPane.setViewportView(panel);
+
+            main.revalidate();
+            main.repaint();
         }
     }
 

@@ -9,7 +9,6 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class PanelComponents {
-    //TODO CREATE DEPOSIT
     private static JButton bLogin = new JButton("Login");
     private static JButton bOpenAcc = new JButton("Open an account");
     private static JButton login = new JButton("Login");

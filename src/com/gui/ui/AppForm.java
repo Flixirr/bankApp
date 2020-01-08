@@ -67,6 +67,8 @@ public class AppForm extends JFrame {
         PanelComponents.getTransaction().addActionListener(new ButtonActions.transactionButton(mainPanel));
 
         PanelComponents.getLogout().addActionListener(new ButtonActions.logout(mainPanel, sidebarWest));
+
+        PanelComponents.getHistory().addActionListener(new ButtonActions.history(mainPanel));
     }
 
     public static int getThisState() {

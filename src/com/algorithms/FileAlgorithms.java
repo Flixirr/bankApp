@@ -2,6 +2,7 @@ package com.algorithms;
 
 import com.gui.ui.AppForm;
 
+import javax.swing.*;
 import java.io.*;
 import java.util.*;
 
@@ -192,7 +193,7 @@ public class FileAlgorithms {
         bw.close();
         addBalance(targetAcc, amount);
     }
-
+    //add to balance method for later use in savings account thread
     static void addBalance(String targetAcc, double amount) throws IOException {
         double nBalance, oBal;
         oBal = readBalance(targetAcc);
@@ -202,17 +203,35 @@ public class FileAlgorithms {
         bw.close();
     }
 
-    //TODO create this as thread to run in background
-    public static void savingsBalance(String targetAcc, boolean logged){
+    //convert file to JLabel
+    static JLabel fileToLabel(File f){
+        String[] labelElements = null;
         try {
-            BufferedWriter bw = new BufferedWriter(new FileWriter(new File(targetAcc)));
-            double curBal;
-            while (logged) {
-                System.out.println("ok");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(f));
+            String hold = bufferedReader.readLine();
+            labelElements = hold.split("!");
+        } catch (Exception e) {
+            showMessageDialog(null, e.getMessage());
         }
+        if(labelElements == null) return new JLabel("error");
+
+        return new JLabel("Title: " + labelElements[1] + "   Description: " + labelElements[5] + "   Amount: " + labelElements[3]);
+    }
+
+    //load transactions and put them into JLabels
+    public static List<JLabel> getTransactions(String PESEL) {
+        List<JLabel> transactions = new ArrayList<>();
+        File dir = new File("accounts/"+PESEL);
+        File[] fileList = dir.listFiles();
+
+        assert fileList != null;
+        for(File f: fileList) {
+            if(!(f.getName().equals("acc.txt") || f.getName().equals("savacc.txt"))) {
+                transactions.add(fileToLabel(f));
+            }
+        }
+
+        return transactions;
     }
 
     //Getters and setters

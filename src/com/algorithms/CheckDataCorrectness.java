@@ -33,20 +33,16 @@ public class CheckDataCorrectness {
         return false;
     }
 
-    public static boolean passwordPeselMatch(String user, String password)
-    {
+    public static boolean passwordPeselMatch(String user, String password) {
         Map<String, String> accounts = FileAlgorithms.parseFileToStringMap(new File("accounts/accounts.txt"));
         boolean match = true;
 
-        if(accounts.containsKey(user))
-        {
-            if(!accounts.get(user).equals(password))
-            {
+        if(accounts.containsKey(user)) {
+            if(!accounts.get(user).equals(password)) {
                 match = false;
             }
         }
-        else
-        {
+        else {
             match = false;
         }
 
