@@ -13,6 +13,8 @@ public class FileAlgorithms {
     private static Map<String, String> accNum = new HashMap<>();
     private static Map<String, String> sAccNum = new HashMap<>();
 
+
+    //Sets map with acc number as key and PESEL as value to use it to login/make transaction
     public static void setNumPeselPair() {
         numPeselPair.clear();
         String curLine;
@@ -33,6 +35,7 @@ public class FileAlgorithms {
         }
     }
 
+    //Writes newly created account to txt files
     public static void accountRegFile(Map<String, String> data) {
         File accounts;
         File dir;
@@ -71,6 +74,7 @@ public class FileAlgorithms {
         }
     }
 
+    //return map with pesels and passwords
     public static Map<String, String> parseFileToStringMap(File data) {
         Map<String, String> result = new HashMap<>();
         BufferedReader bw = null;
@@ -81,6 +85,7 @@ public class FileAlgorithms {
             bw = new BufferedReader(fr);
             while((curLine = bw.readLine()) != null) {
                 keyAndVal = curLine.split("!");
+                //Sets key to pesel and val to password
                 result.put(keyAndVal[5], keyAndVal[7]);
             }
         }
@@ -98,6 +103,7 @@ public class FileAlgorithms {
         return result;
     }
 
+    //Counts subdirectories to choosen directory
     public static int subDirCount(File dir) {
         File dirMain = new File("accounts");
 
@@ -110,6 +116,7 @@ public class FileAlgorithms {
         return dirs.length;
     }
 
+    //Counts files in chosen directory
     public static int fileCount(File dir) {
         String[] files = dir.list((file, s) -> new File(file, s).isFile());
 
@@ -117,6 +124,7 @@ public class FileAlgorithms {
         return files.length;
     }
 
+    //Add transaction file to target dir and origin dir
     public static void addTransactionFile(String transactionID, String amount, String desc, String title,
                                           String target, String from) {
         File transactionFrom = new File("accounts/"+numPeselPair.get(from)+'/'+transactionID+".txt");
@@ -160,6 +168,7 @@ public class FileAlgorithms {
         }
     }
 
+    //Reads balance from .txt
     public static double readBalance(String acc) {
         try {
             BufferedReader br = new BufferedReader(new FileReader(new File(acc)));
@@ -174,6 +183,7 @@ public class FileAlgorithms {
         }
     }
 
+    //Balance update logic here
     static void addSubBalance(String targetAcc, String originAcc, double amount) throws IOException {
         double nBalance, oBal = readBalance(originAcc);
         nBalance = ((double) ((oBal*100-amount*100)/100));
@@ -187,6 +197,7 @@ public class FileAlgorithms {
         bw.close();
     }
 
+    //TODO create this as thread to run in background
     public static void savingsBalance(String targetAcc, boolean logged){
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(new File(targetAcc)));
@@ -199,6 +210,7 @@ public class FileAlgorithms {
         }
     }
 
+    //Getters and setters
     public static Map<String, String> getNumPeselPair() {
         return numPeselPair;
     }

@@ -1,7 +1,8 @@
 package com.gui.styles;
 
-import com.gui.labelObserver.AccountBalance;
-import com.gui.labelObserver.SavAccountBalance;
+import com.gui.actions.ButtonActions;
+import com.observers.labelObserver.AccountBalance;
+import com.observers.labelObserver.SavAccountBalance;
 
 import javax.swing.*;
 import java.awt.*;

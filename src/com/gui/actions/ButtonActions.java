@@ -7,6 +7,9 @@ import com.algorithms.checkDataCorrectness;
 import com.gui.styles.PanelComponents;
 import com.gui.styles.Styles;
 import com.gui.ui.AppForm;
+import com.observers.Subject;
+import com.observers.labelObserver.AccountBalance;
+import com.observers.labelObserver.SavAccountBalance;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,6 +22,9 @@ import java.util.Map;
 import static javax.swing.JOptionPane.showMessageDialog;
 
 public class ButtonActions {
+
+    private static AccountBalance accB;
+    private static SavAccountBalance sAccB;
 
     public static class changePanelStyle implements ActionListener
     {
@@ -60,9 +66,6 @@ public class ButtonActions {
             AppForm.setThisState(state);
             panel.removeAll();
             Styles.accountPanelComps(panel, comps);
-            PanelComponents.getcBalanceInt().setText(
-                    Double.toString(FileAlgorithms.readBalance("accounts/"+AppForm.getLoggedPesel()+"/"+accType))
-            );
             panel.repaint();
             panel.revalidate();
         }
@@ -111,27 +114,34 @@ public class ButtonActions {
             this.sidebar = sidebar;
             this.btns = btns;
         }
+
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
             PESEL = ((JTextField) Algs.getComponentByName(panel, "PESEL!")).getText();
             password = ((JTextField) Algs.getComponentByName(panel, "Password!")).getText();
             if(checkDataCorrectness.passwordPeselMatch(PESEL, password)) {
+
                 FileAlgorithms.setNumPeselPair();
+
+                accB = new AccountBalance(PESEL);
+                sAccB = new SavAccountBalance(PESEL);
+
                 PanelComponents.getAccNumInt().setText(FileAlgorithms.getAccNum().get(PESEL));
                 PanelComponents.getsAccNumInt().setText(FileAlgorithms.getsAccNum().get(PESEL));
-                PanelComponents.getcBalanceInt().setText(
-                        Double.toString(FileAlgorithms.readBalance("accounts/"+PESEL+"/acc.txt"))
-                );
                 AppForm.setLoggedPesel(PESEL);
                 AppForm.setThisState(1);
+
                 panel.removeAll();
                 sidebar.removeAll();
+
                 Styles.toolbarContent(sidebar, btns);
                 Styles.accountPanelComps(panel, comps);
+
                 sidebar.repaint();
                 panel.repaint();
                 sidebar.revalidate();
                 panel.revalidate();
+
                 //FileAlgorithms.savingsBalance("accounts/"+PESEL+"/savacc.txt", true);
             }
             else
@@ -199,4 +209,11 @@ public class ButtonActions {
 
     //TODO CREATE LOG OUT BUTTON
 
+    public static AccountBalance getAccB() {
+        return accB;
+    }
+
+    public static SavAccountBalance getsAccB() {
+        return sAccB;
+    }
 }
