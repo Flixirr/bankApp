@@ -18,7 +18,7 @@ public class FileAlgorithms {
     public static void setNumPeselPair() {
         numPeselPair.clear();
         String curLine;
-        String holder[];
+        String[] holder;
         try{
             BufferedReader bw = new BufferedReader(new FileReader(new File("accounts/accounts.txt")));
             while((curLine = bw.readLine()) != null) {
@@ -30,7 +30,7 @@ public class FileAlgorithms {
             }
             bw.close();
         }
-        catch (IOException e){
+        catch (Exception e){
             e.printStackTrace();
         }
     }
@@ -103,7 +103,7 @@ public class FileAlgorithms {
         return result;
     }
 
-    //Counts subdirectories to choosen directory
+    //Counts subdirectories to chosen directory
     public static int subDirCount(File dir) {
         File dirMain = new File("accounts");
 
@@ -190,9 +190,14 @@ public class FileAlgorithms {
         BufferedWriter bw = new BufferedWriter(new FileWriter(new File(originAcc)));
         bw.write(Double.toString(nBalance));
         bw.close();
+        addBalance(targetAcc, amount);
+    }
+
+    static void addBalance(String targetAcc, double amount) throws IOException {
+        double nBalance, oBal;
         oBal = readBalance(targetAcc);
         nBalance = ((double) ((oBal*100+amount*100)/100));
-        bw = new BufferedWriter(new FileWriter(new File(targetAcc)));
+        BufferedWriter bw = new BufferedWriter(new FileWriter(new File(targetAcc)));
         bw.write(Double.toString(nBalance));
         bw.close();
     }

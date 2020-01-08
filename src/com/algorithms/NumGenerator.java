@@ -4,10 +4,12 @@ import java.io.File;
 import java.util.Collections;
 
 import static com.algorithms.FileAlgorithms.getNumPeselPairKeys;
+import static com.algorithms.FileAlgorithms.setNumPeselPair;
 
 public class NumGenerator {
     static String baseForAcc = "1 0000 ";
     static String baseForSavAcc = "2 0000 ";
+    private static File f = new File("accounts");
 
     public static String numXXXXFormat(int num)
     {
@@ -23,9 +25,12 @@ public class NumGenerator {
 
     public static String generateAccNum()
     {
-        FileAlgorithms.setNumPeselPair();
+        if(f.exists())
+        {
+            setNumPeselPair();
+        }
         int sz = getNumPeselPairKeys().size();
-        if(FileAlgorithms.subDirCount(new File("accounts")) == 0)
+        if(FileAlgorithms.subDirCount(f) == 0)
         {
             return baseForAcc+"0001";
         }

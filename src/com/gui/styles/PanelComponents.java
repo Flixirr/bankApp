@@ -17,6 +17,7 @@ public class PanelComponents {
     private static JButton transaction = new JButton("Make transaction");
     private static JButton history = new JButton("Transaction history");
     private static JButton deposit = new JButton("Deposit funds");
+    private static JButton logout = new JButton("Logout");
 
 
     private static JButton cashLoan = new JButton("Cash loan");
@@ -81,6 +82,7 @@ public class PanelComponents {
             add(account);
             add(savAccount);
             add(history);
+            add(logout);
         }
     };
 
@@ -144,8 +146,8 @@ public class PanelComponents {
         return account;
     }
 
-    public static JButton getCashLoan() {
-        return cashLoan;
+    public static JButton getLogout() {
+        return logout;
     }
 
     public static JButton getDeposit() {

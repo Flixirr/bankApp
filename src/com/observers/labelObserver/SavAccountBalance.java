@@ -14,7 +14,7 @@ public class SavAccountBalance implements Observer {
         txt.setText(Double.toString(FileAlgorithms.readBalance("accounts/"+PESEL+"/savacc.txt")));
     }
 
-    public void update(double amount, String PESEL) {
+    public void update(String PESEL) {
         txt.setText(Double.toString(FileAlgorithms.readBalance("accounts/"+PESEL+"/savacc.txt")));
     }
 

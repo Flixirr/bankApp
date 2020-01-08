@@ -4,7 +4,7 @@ import java.io.File;
 import java.util.Map;
 import static javax.swing.JOptionPane.showMessageDialog;
 
-public class checkDataCorrectness {
+public class CheckDataCorrectness {
 
     public static boolean checkForDataType(String PESEL, String password, String name, String surname) {
         String numReg = ".*[0-9]+.*";
