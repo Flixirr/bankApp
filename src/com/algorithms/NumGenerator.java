@@ -1,63 +1,61 @@
 package com.algorithms;
 
-import java.io.File;
-import java.util.Collections;
+import com.gui.actions.ButtonActions;
+import com.userfiles.Account;
 
-import static com.algorithms.FileAlgorithms.getNumPeselPairKeys;
-import static com.algorithms.FileAlgorithms.setNumPeselPair;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.util.Collections;
 
 public class NumGenerator {
     static String baseForAcc = "1 0000 ";
     static String baseForSavAcc = "2 0000 ";
-    private static File f = new File("accounts");
 
-    public static String numXXXXFormat(int num)
-    {
+    public static String numXXXXFormat(int num) {
         StringBuilder result = new StringBuilder(Integer.toString(num));
 
-        for(int i = 4-result.length(); i > 0; i--)
-        {
+        for (int i = 4 - result.length(); i > 0; i--) {
             result.insert(0, '0');
         }
 
         return result.toString();
     }
 
-    public static String generateAccNum()
-    {
-        if(f.exists())
-        {
-            setNumPeselPair();
-        }
-        int sz = getNumPeselPairKeys().size();
-        if(FileAlgorithms.subDirCount(f) == 0)
-        {
-            return baseForAcc+"0001";
-        }
-        else
-        {
-            return baseForAcc+numXXXXFormat(Integer.parseInt(getNumPeselPairKeys().get(sz/2-1).split(" ")[2])+1);
+    public static String generateAccNum() {
+        int fileCount = FileAlgorithms.fileCount(new File("accounts"));
+        if (fileCount == 0) {
+            return baseForAcc + "0001";
+        } else {
+            return baseForAcc + numXXXXFormat(fileCount + 1);
         }
     }
 
-    public static String generateSAccNum()
-    {
-        int sz = getNumPeselPairKeys().size();
-        if(FileAlgorithms.subDirCount(new File("accounts")) == 0)
-        {
-            return baseForSavAcc+"0001";
-        }
-        else
-        {
-            return baseForSavAcc+numXXXXFormat(Integer.parseInt(getNumPeselPairKeys().get(sz-1).split(" ")[2])+1);
+    public static String generateSAccNum() {
+        int fileCount = FileAlgorithms.fileCount(new File("accounts"));
+        if (fileCount == 0) {
+            return baseForSavAcc + "0001";
+        } else {
+            return baseForSavAcc + numXXXXFormat(fileCount + 1);
         }
     }
 
-    public static String generateTransactionNum(String accNum)
-    {
-        String newAccNum = accNum.replace(" ", "");
-        int tNum = FileAlgorithms.fileCount(new File("accounts/"+FileAlgorithms.getNumPeselPair().get(accNum)));
+    public static String generateTransactionNum(Account acc) {
+        return acc.getNumber() + (acc.getTransactions().size());
+    }
 
-        return newAccNum+ (tNum - 1);
+    //generate random code for 20 pln deposit
+    public static String generateDepoNum(){
+        final String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                + "0123456789"
+                + "abcdefghijklmnopqrstuvxyz";
+
+        StringBuilder sb = new StringBuilder(5);
+        //Get random char from string, then append it to stringbuilder
+        for(int i = 0; i < 5; i++){
+            int randIndex = (int) (AlphaNumericString.length() * Math.random());
+            sb.append(AlphaNumericString.charAt(randIndex));
+        }
+
+        return sb.toString();
     }
 }

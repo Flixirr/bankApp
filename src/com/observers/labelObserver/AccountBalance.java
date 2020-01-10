@@ -1,6 +1,6 @@
 package com.observers.labelObserver;
 
-import com.algorithms.FileAlgorithms;
+import com.gui.actions.ButtonActions;
 import com.observers.Observer;
 
 import javax.swing.*;
@@ -9,13 +9,13 @@ public class AccountBalance implements Observer {
 
     private static JLabel txt = new JLabel();
 
-    public AccountBalance(String PESEL)
+    public AccountBalance()
     {
-        txt.setText(Double.toString(FileAlgorithms.readBalance("accounts/"+PESEL+"/acc.txt")));
+        txt.setText(ButtonActions.getLoggedUser().getbAcc().getBalance() + " PLN");
     }
 
-    public void update(String PESEL) {
-        txt.setText(Double.toString(FileAlgorithms.readBalance("accounts/"+PESEL+"/acc.txt")));
+    public void update() {
+        txt.setText(ButtonActions.getLoggedUser().getbAcc().getBalance() + " PLN");
     }
 
     public static JLabel getTxt() {

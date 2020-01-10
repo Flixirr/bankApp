@@ -8,14 +8,14 @@ import com.observers.Observer;
 import com.observers.Subject;
 import com.observers.labelObserver.AccountBalance;
 import com.observers.labelObserver.SavAccountBalance;
+import com.userfiles.Transaction;
+import com.userfiles.User;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.List;
 
 import static javax.swing.JOptionPane.showMessageDialog;
@@ -24,9 +24,9 @@ public class ButtonActions {
 
     private static AccountBalance accB;
     private static SavAccountBalance sAccB;
-    private static String PESEL;
     private static ArrayList<Observer> observers = new ArrayList<>();
-    private static Thread savLogic = new Thread(new SavingsAccountThread("SavingsAccountLogic"));
+    private static User loggedUser = null;
+    private static Thread savLogic;
 
     public static class changePanelStyle implements ActionListener {
         private JPanel panel;
@@ -105,7 +105,7 @@ public class ButtonActions {
         private JPanel sidebar;
         private ArrayList<JButton> btns;
         private ArrayList<Component> comps;
-        String password;
+        String password, PESEL;
 
         public loggedInForm(JPanel panel, JPanel sidebar, ArrayList<JButton> btns, ArrayList<Component> comps)
         {
@@ -119,35 +119,39 @@ public class ButtonActions {
         public void actionPerformed(ActionEvent actionEvent) {
             PESEL = ((JTextField) Algs.getComponentByName(panel, "PESEL!")).getText();
             password = ((JTextField) Algs.getComponentByName(panel, "Password!")).getText();
-            if(CheckDataCorrectness.passwordPeselMatch(PESEL, password)) {
-                ((JTextField) Algs.getComponentByName(panel, "PESEL!")).setText("");
-                ((JTextField) Algs.getComponentByName(panel, "Password!")).setText("");
+            if(FileAlgorithms.readObject(PESEL) != null) {
+                if (Objects.requireNonNull(FileAlgorithms.readObject(PESEL)).getPassword().equals(password)) {
+                    loggedUser = FileAlgorithms.readObject(PESEL);
+                    FileAlgorithms.setNumUserPair();
+                    savLogic = savLogic = new Thread(new SavingsAccountThread("SavAcc"));
+                    savLogic.start();
 
-                FileAlgorithms.setNumPeselPair();
+                    ((JTextField) Algs.getComponentByName(panel, "PESEL!")).setText("");
+                    ((JTextField) Algs.getComponentByName(panel, "Password!")).setText("");
 
-                accB = new AccountBalance(PESEL);
-                sAccB = new SavAccountBalance(PESEL);
+                    accB = new AccountBalance();
+                    sAccB = new SavAccountBalance();
 
-                PanelComponents.getAccNumInt().setText(FileAlgorithms.getAccNum().get(PESEL));
-                PanelComponents.getsAccNumInt().setText(FileAlgorithms.getsAccNum().get(PESEL));
-                AppForm.setLoggedPesel(PESEL);
-                AppForm.setThisState(1);
+                    PanelComponents.getAccNumInt().setText(loggedUser.getbAcc().getNumber());
+                    PanelComponents.getsAccNumInt().setText(loggedUser.getsAcc().getNumber());
+                    AppForm.setThisState(1);
 
-                panel.removeAll();
-                sidebar.removeAll();
+                    panel.removeAll();
+                    sidebar.removeAll();
 
-                Styles.toolbarContent(sidebar, btns);
-                Styles.accountPanelComps(panel, comps);
+                    Styles.toolbarContent(sidebar, btns);
+                    Styles.accountPanelComps(panel, comps);
 
-                sidebar.repaint();
-                panel.repaint();
-                sidebar.revalidate();
-                panel.revalidate();
-                if(savLogic == null) savLogic = new Thread(new SavingsAccountThread("SavingsAccountLogic"));
-                savLogic.start();
-            }
-            else
-            {
+                    sidebar.repaint();
+                    panel.repaint();
+                    sidebar.revalidate();
+                    panel.revalidate();
+                } else {
+                    ((JTextField) Algs.getComponentByName(panel, "PESEL!")).setText("");
+                    ((JTextField) Algs.getComponentByName(panel, "Password!")).setText("");
+                    showMessageDialog(null, "PESEL or password incorrect.");
+                }
+            } else {
                 ((JTextField) Algs.getComponentByName(panel, "PESEL!")).setText("");
                 ((JTextField) Algs.getComponentByName(panel, "Password!")).setText("");
                 showMessageDialog(null, "PESEL or password incorrect.");
@@ -175,8 +179,6 @@ public class ButtonActions {
                     }
                 }
                 if(CheckDataCorrectness.checkForDataType(fields.get("PESEL!"), fields.get("Password!"), fields.get("Name!"), fields.get("Surname!"))) {
-                    fields.put("ANUM!", NumGenerator.generateAccNum());
-                    fields.put("SANUM!", NumGenerator.generateSAccNum());
                     FileAlgorithms.accountRegFile(fields);
                 }
             }
@@ -187,8 +189,7 @@ public class ButtonActions {
                 String target =
                         Algs.accNumCorrectFormat(((JTextField) Algs.getComponentByName(main, "SELECTEDACC")).getText());
                 if(CheckDataCorrectness.checkAccNum(target)) {
-                    String id = NumGenerator.generateTransactionNum(PanelComponents.getAccNumInt().getText());
-                    FileAlgorithms.addTransactionFile(id, amount, desc, title, target, PanelComponents.getAccNumInt().getText());
+
                     Algs.clearComps(main);
                     if(observers.isEmpty()) {
                         registerObserver(accB);
@@ -203,11 +204,16 @@ public class ButtonActions {
             else if(state == 4) {
                 String desc = ((JTextField) Algs.getComponentByName(main, "DESC")).getText();
                 String title = ((JTextField) Algs.getComponentByName(main, "TITLE")).getText();
-                String amount = ((JTextField) Algs.getComponentByName(main, "AMOUNT")).getText();
-                String target = PanelComponents.getAccNumInt().getText();
-                String id = NumGenerator.generateTransactionNum(PanelComponents.getsAccNumInt().getText());
-                FileAlgorithms.addTransactionFile(id, amount, desc, title, target, PanelComponents.getAccNumInt().getText());
+                double amount = Double.parseDouble(((JTextField) Algs.getComponentByName(main, "AMOUNT")).getText());
+
+                Transaction transaction = new Transaction(loggedUser.getsAcc(), loggedUser.getbAcc(), amount, title, desc);
+                loggedUser.getsAcc().subFromBalance(transaction);
+                loggedUser.getbAcc().addToBalance(transaction);
+
+                System.out.println(loggedUser.getbAcc().getTransactions());
+
                 Algs.clearComps(main);
+
                 if(observers.isEmpty()) {
                     registerObserver(accB);
                     registerObserver(sAccB);
@@ -224,7 +230,7 @@ public class ButtonActions {
         @Override
         public void notifyObservers() {
             for(Observer o : observers) {
-                o.update(PESEL);
+                o.update();
             }
         }
 
@@ -246,9 +252,9 @@ public class ButtonActions {
         public void actionPerformed(ActionEvent actionEvent) {
             AppForm.setThisState(0);
             observers.clear();
+            loggedUser = null;
             savLogic.interrupt();
             savLogic = null;
-            PESEL = "";
 
             sidebar.removeAll();
             main.removeAll();
@@ -280,12 +286,6 @@ public class ButtonActions {
             GridBagConstraints gbc = new GridBagConstraints();
             gbc.insets = new Insets(0,10,0,0);
 
-            List<JLabel> labels = FileAlgorithms.getTransactions(PESEL);
-
-            for(int i = 0; i < labels.size(); i++) {
-                gbc.gridy = i;
-                panel.add(labels.get(i), gbc);
-            }
             scrollPane.setViewportView(panel);
 
             main.revalidate();
@@ -293,15 +293,19 @@ public class ButtonActions {
         }
     }
 
-    public static AccountBalance getAccB() {
-        return accB;
+    public static class deposit implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent actionEvent) {
+
+        }
     }
 
     public static SavAccountBalance getsAccB() {
         return sAccB;
     }
 
-    public static String getPESEL() {
-        return PESEL;
+    public static User getLoggedUser() {
+        return loggedUser;
     }
 }

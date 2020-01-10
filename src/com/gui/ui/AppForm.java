@@ -2,6 +2,7 @@ package com.gui.ui;
 
 import com.gui.actions.ButtonActions;
 import com.gui.styles.*;
+import com.userfiles.User;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,7 +22,6 @@ public class AppForm extends JFrame {
     JPanel mainPanel = new mainPanel();
 
     private static int state = 0;
-    private static String loggedPesel = "";
 
     public AppForm(String title, int width) {
         super(title);
@@ -77,13 +77,5 @@ public class AppForm extends JFrame {
 
     public static void setThisState(int state) {
         AppForm.state = state;
-    }
-
-    public static void setLoggedPesel(String loggedPesel) {
-        AppForm.loggedPesel = loggedPesel;
-    }
-
-    public static String getLoggedPesel() {
-        return loggedPesel;
     }
 }
