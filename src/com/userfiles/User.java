@@ -42,4 +42,12 @@ public class User implements Serializable {
     public Account getsAcc() {
         return sAcc;
     }
+
+    public void setbAcc(Account bAcc) {
+        this.bAcc = bAcc;
+    }
+
+    public void setsAcc(Account sAcc) {
+        this.sAcc = sAcc;
+    }
 }

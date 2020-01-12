@@ -8,6 +8,7 @@ import com.observers.Observer;
 import com.observers.Subject;
 import com.observers.labelObserver.AccountBalance;
 import com.observers.labelObserver.SavAccountBalance;
+import com.userfiles.Account;
 import com.userfiles.Transaction;
 import com.userfiles.User;
 
@@ -15,6 +16,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.util.*;
 import java.util.List;
 
@@ -119,19 +121,22 @@ public class ButtonActions {
         public void actionPerformed(ActionEvent actionEvent) {
             PESEL = ((JTextField) Algs.getComponentByName(panel, "PESEL!")).getText();
             password = ((JTextField) Algs.getComponentByName(panel, "Password!")).getText();
+            //Compare entered password to read object password
             if(FileAlgorithms.readObject(PESEL) != null) {
                 if (Objects.requireNonNull(FileAlgorithms.readObject(PESEL)).getPassword().equals(password)) {
                     loggedUser = FileAlgorithms.readObject(PESEL);
                     FileAlgorithms.setNumUserPair();
                     savLogic = savLogic = new Thread(new SavingsAccountThread("SavAcc"));
-                    savLogic.start();
+                    //savLogic.start();
 
+                    //Reset fields so after logout they don't remember pesel neither password
                     ((JTextField) Algs.getComponentByName(panel, "PESEL!")).setText("");
                     ((JTextField) Algs.getComponentByName(panel, "Password!")).setText("");
 
                     accB = new AccountBalance();
                     sAccB = new SavAccountBalance();
 
+                    //set state to 1 (logged in)
                     PanelComponents.getAccNumInt().setText(loggedUser.getbAcc().getNumber());
                     PanelComponents.getsAccNumInt().setText(loggedUser.getsAcc().getNumber());
                     AppForm.setThisState(1);
@@ -147,14 +152,16 @@ public class ButtonActions {
                     sidebar.revalidate();
                     panel.revalidate();
                 } else {
+                    //if password is incorrect)
                     ((JTextField) Algs.getComponentByName(panel, "PESEL!")).setText("");
                     ((JTextField) Algs.getComponentByName(panel, "Password!")).setText("");
-                    showMessageDialog(null, "PESEL or password incorrect.");
+                    showMessageDialog(null, "Password incorrect.");
                 }
             } else {
+                //if pesel doesn't exist
                 ((JTextField) Algs.getComponentByName(panel, "PESEL!")).setText("");
                 ((JTextField) Algs.getComponentByName(panel, "Password!")).setText("");
-                showMessageDialog(null, "PESEL or password incorrect.");
+                showMessageDialog(null, "Account does not exist!");
             }
         }
     }
@@ -171,6 +178,7 @@ public class ButtonActions {
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
             int state = AppForm.getThisState();
+            //check state - 0 means account registration, 2 means transaction from base account, 4 mean transaction from sav acc to base acc
             if(state == 0) {
                 for(Component co: main.getComponents()) {
                     if(co instanceof JTextField) {
@@ -178,6 +186,7 @@ public class ButtonActions {
                         ((JTextField) co).setText("");
                     }
                 }
+                //check data (if everything is correct)
                 if(CheckDataCorrectness.checkForDataType(fields.get("PESEL!"), fields.get("Password!"), fields.get("Name!"), fields.get("Surname!"))) {
                     FileAlgorithms.accountRegFile(fields);
                 }
@@ -188,9 +197,20 @@ public class ButtonActions {
                 String amount = ((JTextField) Algs.getComponentByName(main, "AMOUNT")).getText();
                 String target =
                         Algs.accNumCorrectFormat(((JTextField) Algs.getComponentByName(main, "SELECTEDACC")).getText());
-                if(CheckDataCorrectness.checkAccNum(target)) {
-
+                if(CheckDataCorrectness.checkAccNum(target) && FileAlgorithms.getNumUserPair().containsKey(target)) {
+                    //clear comps actually clears text fields
                     Algs.clearComps(main);
+
+                    //transaction object to target acc and origin acc
+                    if(target.charAt(0) == '2') {
+                        new Transaction(loggedUser.getbAcc(), FileAlgorithms.getNumUserPair().get(target).getsAcc(), Double.parseDouble(amount), title, desc);
+                    } else {
+                        new Transaction(loggedUser.getbAcc(), FileAlgorithms.getNumUserPair().get(target).getbAcc(), Double.parseDouble(amount), title, desc);
+                    }
+
+                    loggedUser = FileAlgorithms.readObject(loggedUser.getPESEL());
+
+                    //notify labels about transaction
                     if(observers.isEmpty()) {
                         registerObserver(accB);
                         registerObserver(sAccB);
@@ -202,23 +222,29 @@ public class ButtonActions {
                 }
             }
             else if(state == 4) {
+                //get amount, desc and title from fields
                 String desc = ((JTextField) Algs.getComponentByName(main, "DESC")).getText();
                 String title = ((JTextField) Algs.getComponentByName(main, "TITLE")).getText();
                 double amount = Double.parseDouble(((JTextField) Algs.getComponentByName(main, "AMOUNT")).getText());
+                //check if amount is not greater than balance nor lesser than 0
 
-                Transaction transaction = new Transaction(loggedUser.getsAcc(), loggedUser.getbAcc(), amount, title, desc);
-                loggedUser.getsAcc().subFromBalance(transaction);
-                loggedUser.getbAcc().addToBalance(transaction);
-
-                System.out.println(loggedUser.getbAcc().getTransactions());
-
-                Algs.clearComps(main);
-
-                if(observers.isEmpty()) {
-                    registerObserver(accB);
-                    registerObserver(sAccB);
+                if(amount < 0 || amount > loggedUser.getsAcc().getBalance()) {
+                    showMessageDialog(null, "Amount is negative or surpasses account balance");
                 }
-                notifyObservers();
+                else {
+                    //make transaction object and put it in target account
+                    new Transaction(loggedUser.getsAcc(), loggedUser.getbAcc(), amount, title, desc);
+
+                    Algs.clearComps(main);
+
+                    //notify observers to update labels
+
+                    if (observers.isEmpty()) {
+                        registerObserver(accB);
+                        registerObserver(sAccB);
+                    }
+                    notifyObservers();
+                }
             }
         }
 
@@ -250,6 +276,8 @@ public class ButtonActions {
 
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
+            //set state to 0 (not logged in), reset observers, make thread interrupted so it throws exception and set it to null
+            //so it can be started again on different account later
             AppForm.setThisState(0);
             observers.clear();
             loggedUser = null;

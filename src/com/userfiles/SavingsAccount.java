@@ -18,6 +18,6 @@ public class SavingsAccount extends Account implements Serializable {
 
     @Override
     public void subFromBalance(Transaction transaction) {
-        this.setBalance(-(this.getBalance()*100+transaction.getAmount()*100)/100);
+        this.setBalance((this.getBalance()*100-transaction.getAmount()*100)/100);
     }
 }

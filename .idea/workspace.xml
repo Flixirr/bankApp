@@ -2,45 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00b36b71-2c02-4361-a86a-333b037fc75a" name="Default Changelist" comment="WORKING TRANSACTION HISTORY">
-      <change afterPath="$PROJECT_DIR$/src/com/userfiles/Account.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/userfiles/BaseAccount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/userfiles/SavingsAccount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/userfiles/Transaction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/userfiles/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/12312312312/1000000013.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/12312312312/1000000014.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/12312312312/2000000011.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/12312312312/2000000012.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/12312312312/acc.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/12312312312/savacc.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/32132132132/2000000021.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/32132132132/acc.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/32132132132/savacc.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/69696969696/1000000013.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/69696969696/1000000014.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/69696969696/acc.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/69696969696/savacc.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/accounts.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/algorithms/FileAlgorithms.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/algorithms/FileAlgorithms.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/algorithms/checkDataCorrectness.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/algorithms/checkDataCorrectness.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/styles/PanelComponents.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/algorithms/CheckDataCorrectness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/algorithms/CheckDataCorrectness.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/actions/ButtonActions$changeAccountStyle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/actions/ButtonActions$changeAccountStyle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/actions/ButtonActions$changePanelStyle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/actions/ButtonActions$changePanelStyle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/actions/ButtonActions$loggedInForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/actions/ButtonActions$loggedInForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/actions/ButtonActions$submit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/actions/ButtonActions$submit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/actions/ButtonActions.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/actions/ButtonActions.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/ui/BankApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/ui/BankApp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/algorithms/FileAlgorithms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/algorithms/FileAlgorithms.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/algorithms/NumGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/algorithms/NumGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/algorithms/SavingsAccountThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/algorithms/SavingsAccountThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/gui/actions/ButtonActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gui/actions/ButtonActions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/gui/ui/AppForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gui/ui/AppForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/observers/Observer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/observers/Observer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/observers/labelObserver/AccountBalance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/observers/labelObserver/AccountBalance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/observers/labelObserver/SavAccountBalance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/observers/labelObserver/SavAccountBalance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gui/ui/BankApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gui/ui/BankApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/userfiles/BaseAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/userfiles/BaseAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/userfiles/SavingsAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/userfiles/SavingsAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/userfiles/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/userfiles/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/userfiles/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/userfiles/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +44,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="212" />
@@ -275,9 +252,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="499" y="188" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1577218207220" />
-    <state x="702" y="344" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1578595298474">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="562" y="275" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1578789385299">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
+    <state x="562" y="275" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.864@0.0.1536.864" timestamp="1578789385299" />
     <state x="702" y="344" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1578595298474" />
     <state x="718" y="179" key="#com.intellij.ide.util.MemberChooser" timestamp="1578599125176">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -288,6 +266,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="808" y="430" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1578507139202" />
+    <state x="566" y="318" width="403" height="236" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1578787146109">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="566" y="318" width="403" height="236" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.864@0.0.1536.864" timestamp="1578787146109" />
     <state x="499" y="180" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1577031707434">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -297,45 +279,45 @@
     </state>
     <state x="414" y="30" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1577659010770" />
     <state x="518" y="38" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1578526386371" />
-    <state width="1877" height="328" key="GridCell.Tab.0.bottom" timestamp="1578599432047">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1493" height="326" key="GridCell.Tab.0.bottom" timestamp="1578791151481">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="299" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1577658839734" />
+    <state width="1493" height="326" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1578791151481" />
     <state width="1877" height="328" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1578599432047" />
-    <state width="1877" height="328" key="GridCell.Tab.0.center" timestamp="1578599432047">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1493" height="326" key="GridCell.Tab.0.center" timestamp="1578791151480">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="299" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1577658839734" />
+    <state width="1493" height="326" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1578791151480" />
     <state width="1877" height="328" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1578599432047" />
-    <state width="1877" height="328" key="GridCell.Tab.0.left" timestamp="1578599432047">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1493" height="326" key="GridCell.Tab.0.left" timestamp="1578791151480">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="299" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1577658839734" />
+    <state width="1493" height="326" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1578791151480" />
     <state width="1877" height="328" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1578599432047" />
-    <state width="1877" height="328" key="GridCell.Tab.0.right" timestamp="1578599432047">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1493" height="326" key="GridCell.Tab.0.right" timestamp="1578791151480">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="299" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1577658839734" />
+    <state width="1493" height="326" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1578791151480" />
     <state width="1877" height="328" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1578599432047" />
-    <state width="1877" height="328" key="GridCell.Tab.1.bottom" timestamp="1578599432048">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1493" height="299" key="GridCell.Tab.1.bottom" timestamp="1578790377878">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="299" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1577658839734" />
+    <state width="1493" height="299" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1578790377878" />
     <state width="1877" height="328" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1578599432048" />
-    <state width="1877" height="328" key="GridCell.Tab.1.center" timestamp="1578599432048">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1493" height="299" key="GridCell.Tab.1.center" timestamp="1578790377878">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="299" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1577658839734" />
+    <state width="1493" height="299" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1578790377878" />
     <state width="1877" height="328" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1578599432048" />
-    <state width="1877" height="328" key="GridCell.Tab.1.left" timestamp="1578599432048">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1493" height="299" key="GridCell.Tab.1.left" timestamp="1578790377878">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="299" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1577658839734" />
+    <state width="1493" height="299" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1578790377878" />
     <state width="1877" height="328" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1578599432048" />
-    <state width="1877" height="328" key="GridCell.Tab.1.right" timestamp="1578599432048">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1493" height="299" key="GridCell.Tab.1.right" timestamp="1578790377878">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="299" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1577658839734" />
+    <state width="1493" height="299" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1578790377878" />
     <state width="1877" height="328" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1578599432048" />
     <state x="276" y="62" key="SettingsEditor" timestamp="1577220579357">
       <screen x="0" y="0" width="1536" height="864" />
@@ -345,15 +327,15 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="552" y="274" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1578526314502" />
-    <state x="588" y="323" key="com.intellij.ide.util.TipDialog" timestamp="1578694403607">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="470" y="258" key="com.intellij.ide.util.TipDialog" timestamp="1578783415755">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="470" y="258" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1577658967347" />
+    <state x="470" y="258" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1578783415755" />
     <state x="588" y="323" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1578694403607" />
-    <state x="531" y="246" key="run.anything.popup" timestamp="1578599302611">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="425" y="197" key="run.anything.popup" timestamp="1578785904067">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="425" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1577532827110" />
+    <state x="425" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1578785904067" />
     <state x="531" y="246" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1578599302611" />
     <state x="539" y="226" width="840" height="848" key="search.everywhere.popup" timestamp="1578594299019">
       <screen x="0" y="0" width="1920" height="1080" />

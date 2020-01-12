@@ -27,27 +27,29 @@ public class FileAlgorithms {
 
     //Writes newly created account to txt files
     public static void accountRegFile(Map<String, String> data) {
-        File account;
-        try {
-            File dir = new File("accounts");
-            account = new File("accounts/"+data.get("PESEL!")+".bin");
-            boolean dirExist = dir.exists();
-            //Check if user already exists
-            if(!dirExist) dirExist = dir.mkdir();
-            if(!account.exists() && dirExist) {
-                //Create new user, then write object to file
-                User user = new User(data.get("Name!"), data.get("Surname!"), data.get("PESEL!"), data.get("Password!"));
-                FileOutputStream fileOutputStream = new FileOutputStream(account);
-                ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+        File dir = new File("accounts");
+        boolean dirExist = dir.exists();
+        //Check if user already exists
+        if(!dirExist) dirExist = dir.mkdir();
+        //Create new user, then write object to file
+        User user = new User(data.get("Name!"), data.get("Surname!"), data.get("PESEL!"), data.get("Password!"));
+        saveChanges(user, false);
+    }
+
+    public static void saveChanges(User user, boolean override) {
+        File userFile = new File("accounts/" + user.getPESEL() + ".bin");
+        if(override || !userFile.exists()) {
+            try {
+                ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(userFile));
 
                 objectOutputStream.writeObject(user);
+                objectOutputStream.flush();
+                objectOutputStream.close();
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-            else {
-                showMessageDialog(null, "This account already exists!");
-            }
-        }
-        catch(IOException e) {
-            e.printStackTrace();
+        } else {
+            showMessageDialog(null, "This account already exists!");
         }
     }
 
