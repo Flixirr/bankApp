@@ -194,31 +194,34 @@ public class ButtonActions {
             else if(state == 2) {
                 String desc = ((JTextField) Algs.getComponentByName(main, "DESC")).getText();
                 String title = ((JTextField) Algs.getComponentByName(main, "TITLE")).getText();
-                String amount = ((JTextField) Algs.getComponentByName(main, "AMOUNT")).getText();
+                double amount = Double.parseDouble(((JTextField) Algs.getComponentByName(main, "AMOUNT")).getText());
                 String target =
                         Algs.accNumCorrectFormat(((JTextField) Algs.getComponentByName(main, "SELECTEDACC")).getText());
-                if(CheckDataCorrectness.checkAccNum(target) && FileAlgorithms.getNumUserPair().containsKey(target)) {
-                    //clear comps actually clears text fields
-                    Algs.clearComps(main);
+                if(amount < 0 && amount > loggedUser.getbAcc().getBalance()) {
+                    showMessageDialog(null, "Amount is negative or greater than account balance");
+                } else {
+                    if (CheckDataCorrectness.checkAccNum(target) && FileAlgorithms.getNumUserPair().containsKey(target)) {
+                        //clear comps actually clears text fields
+                        Algs.clearComps(main);
 
-                    //transaction object to target acc and origin acc
-                    if(target.charAt(0) == '2') {
-                        new Transaction(loggedUser.getbAcc(), FileAlgorithms.getNumUserPair().get(target).getsAcc(), Double.parseDouble(amount), title, desc);
+                        //transaction object to target acc and origin acc
+                        if (target.charAt(0) == '2') {
+                            new Transaction(loggedUser.getbAcc(), FileAlgorithms.getNumUserPair().get(target).getsAcc(), amount, title, desc);
+                        } else {
+                            new Transaction(loggedUser.getbAcc(), FileAlgorithms.getNumUserPair().get(target).getbAcc(), amount, title, desc);
+                        }
+
+                        loggedUser = FileAlgorithms.readObject(loggedUser.getPESEL());
+
+                        //notify labels about transaction
+                        if (observers.isEmpty()) {
+                            registerObserver(accB);
+                            registerObserver(sAccB);
+                        }
+                        notifyObservers();
                     } else {
-                        new Transaction(loggedUser.getbAcc(), FileAlgorithms.getNumUserPair().get(target).getbAcc(), Double.parseDouble(amount), title, desc);
+                        showMessageDialog(null, "Provided account number is incorrect");
                     }
-
-                    loggedUser = FileAlgorithms.readObject(loggedUser.getPESEL());
-
-                    //notify labels about transaction
-                    if(observers.isEmpty()) {
-                        registerObserver(accB);
-                        registerObserver(sAccB);
-                    }
-                    notifyObservers();
-                }
-                else {
-                    showMessageDialog(null, "Provided account number is incorrect");
                 }
             }
             else if(state == 4) {
@@ -229,7 +232,7 @@ public class ButtonActions {
                 //check if amount is not greater than balance nor lesser than 0
 
                 if(amount < 0 || amount > loggedUser.getsAcc().getBalance()) {
-                    showMessageDialog(null, "Amount is negative or surpasses account balance");
+                    showMessageDialog(null, "Amount is negative or greater than account balance");
                 }
                 else {
                     //make transaction object and put it in target account

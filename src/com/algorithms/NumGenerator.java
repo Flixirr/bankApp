@@ -11,6 +11,7 @@ public class NumGenerator {
     static String baseForAcc = "1 0000 ";
     static String baseForSavAcc = "2 0000 ";
 
+    //convert number to string XXXX, e.g 1 to 0001
     public static String numXXXXFormat(int num) {
         StringBuilder result = new StringBuilder(Integer.toString(num));
 

@@ -36,9 +36,9 @@ public class FileAlgorithms {
         saveChanges(user, false);
     }
 
-    public static void saveChanges(User user, boolean override) {
+    public static void saveChanges(User user, boolean overwrite) {
         File userFile = new File("accounts/" + user.getPESEL() + ".bin");
-        if(override || !userFile.exists()) {
+        if(overwrite || !userFile.exists()) {
             try {
                 ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(userFile));
 
