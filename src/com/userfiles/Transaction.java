@@ -38,6 +38,9 @@ public class Transaction implements Serializable {
             FileAlgorithms.saveChanges(tUser, true);
         }
         else if(origin.getNumber().equals("SAVACC")) {
+            tUser = FileAlgorithms.readObject(ButtonActions.getLoggedUser().getPESEL());
+            assert tUser != null;
+            tUser.setsAcc(target);
             transactionLabel.setText("SAVINGS FOR " + amount);
             FileAlgorithms.saveChanges(tUser, true);
         }
