@@ -34,7 +34,7 @@ public class Transaction implements Serializable {
 
         if(origin.getNumber().equals("DEPO")) {
             String id = NumGenerator.generateTransactionNum(target);
-            transactionLabel.setText("DEPOID " + id + " ON ACCOUNT " + target.getNumber());
+            transactionLabel.setText("DEPOID " + id + " ON ACCOUNT " + target.getNumber() + " FOR AMOUNT " + amount);
             FileAlgorithms.saveChanges(tUser, true);
         }
         else if(origin.getNumber().equals("SAVACC")) {
