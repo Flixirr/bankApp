@@ -26,7 +26,7 @@ public class SavingsAccountThread implements Runnable, Subject {
                             "SAV");
                     notifyObservers();
                 }
-                Thread.sleep(3000);
+                Thread.sleep(30000);
             }
         } catch (InterruptedException e) {
             removeObserver(ButtonActions.getsAccB());
