@@ -36,6 +36,7 @@ public class FileAlgorithms {
         if(dirExist) {
             User user = new User(data.get("Name!"), data.get("Surname!"), data.get("PESEL!"), data.get("Password!"));
             saveChanges(user, false);
+            showMessageDialog(null, "Account has been created");
         }
     }
 

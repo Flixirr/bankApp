@@ -231,25 +231,27 @@ public class ButtonActions {
                 //get amount, desc and title from fields
                 String desc = ((JTextField) Algs.getComponentByName(main, "DESC")).getText();
                 String title = ((JTextField) Algs.getComponentByName(main, "TITLE")).getText();
-                double amount = Double.parseDouble(((JTextField) Algs.getComponentByName(main, "AMOUNT")).getText());
+                String amountS = ((JTextField) Algs.getComponentByName(main, "AMOUNT")).getText();
                 //check if amount is not greater than balance nor lesser than 0
 
-                if(amount < 0 || amount > loggedUser.getsAcc().getBalance()) {
-                    showMessageDialog(null, "Amount is negative or greater than account balance");
-                }
-                else {
-                    //make transaction object and put it in target account
-                    new Transaction(loggedUser.getsAcc(), loggedUser.getbAcc(), amount, title, desc);
+                if(CheckDataCorrectness.checkAmountProv(amountS)) {
+                    double amount = Double.parseDouble(amountS);
+                    if (amount < 0 || amount > loggedUser.getsAcc().getBalance()) {
+                        showMessageDialog(null, "Amount is negative or greater than account balance");
+                    } else {
+                        //make transaction object and put it in target account
+                        new Transaction(loggedUser.getsAcc(), loggedUser.getbAcc(), amount, title, desc);
 
-                    Algs.clearComps(main);
+                        Algs.clearComps(main);
 
-                    //notify observers to update labels
+                        //notify observers to update labels
 
-                    if (observers.isEmpty()) {
-                        registerObserver(accB);
-                        registerObserver(sAccB);
+                        if (observers.isEmpty()) {
+                            registerObserver(accB);
+                            registerObserver(sAccB);
+                        }
+                        notifyObservers();
                     }
-                    notifyObservers();
                 }
             }
             else if(state == 111 || state == 222) {
@@ -267,6 +269,7 @@ public class ButtonActions {
                     }
                     notifyObservers();
                     depoCode = "000000";
+                    showMessageDialog(null, "Deposited 10 PLN to selected account");
                 } else {
                     ((JTextField) Algs.getComponentByName(main, "DEPOCODE")).setText("");
                     showMessageDialog(null, "Entered deposit code is invalid!");
