@@ -19,7 +19,7 @@ public class SavingsAccountThread implements Runnable, Subject {
             registerObserver(ButtonActions.getsAccB());
             double amount;
             while (lIn) {
-                amount = Math.round(ButtonActions.getLoggedUser().getsAcc().getBalance()/100);
+                amount = Math.round(ButtonActions.getLoggedUser().getsAcc().getBalance()*5)/100.0;
                 if(ButtonActions.getLoggedUser().getsAcc().getBalance() != 0) {
                     if (amount < 0.01) amount = 0.01;
                     new Transaction(new BaseAccount("SAVACC", amount), ButtonActions.getLoggedUser().getsAcc(), amount, "SAV",

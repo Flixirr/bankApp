@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00b36b71-2c02-4361-a86a-333b037fc75a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/algorithms/FileAlgorithms.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/algorithms/FileAlgorithms.class" afterDir="false" />
@@ -27,16 +26,16 @@
       <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/ui/BankApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/ui/BankApp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/ui/Sidebar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/ui/Sidebar.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/bankApp/com/gui/ui/mainPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bankApp/com/gui/ui/mainPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/algorithms/CheckDataCorrectness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/algorithms/CheckDataCorrectness.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/algorithms/FileAlgorithms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/algorithms/FileAlgorithms.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/algorithms/NumGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/algorithms/NumGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/algorithms/SavingsAccountThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/algorithms/SavingsAccountThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/gui/actions/ButtonActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gui/actions/ButtonActions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/gui/styles/PanelComponents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gui/styles/PanelComponents.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/gui/ui/AppForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gui/ui/AppForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gui/ui/BankApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gui/ui/BankApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/userfiles/BaseAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/userfiles/BaseAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/userfiles/SavingsAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/userfiles/SavingsAccount.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/userfiles/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/userfiles/Transaction.java" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,61 +43,6 @@
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/gui/actions/ButtonActions.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="131" column="52" selection-start-line="131" selection-start-column="52" selection-end-line="131" selection-end-column="52" />
-              <folding>
-                <element signature="class#changePanelStyle#0;class#ButtonActions#0" />
-                <element signature="class#changeAccountStyle#0;class#ButtonActions#0" />
-                <element signature="class#transactionButton#0;class#ButtonActions#0" />
-                <element signature="class#deposit#0;class#ButtonActions#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/algorithms/SavingsAccountThread.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="21" column="93" selection-start-line="21" selection-start-column="93" selection-end-line="21" selection-end-column="93" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/userfiles/Transaction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="40" column="68" lean-forward="true" selection-start-line="40" selection-start-column="68" selection-end-line="40" selection-end-column="68" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/algorithms/FileAlgorithms.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="82" column="46" selection-start-line="82" selection-start-column="46" selection-end-line="82" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/gui/ui/AppForm.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="64" column="93" selection-start-line="64" selection-start-column="93" selection-end-line="64" selection-end-column="93" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -111,121 +55,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/com/algorithms/NumGenerator.java" />
-        <option value="$PROJECT_DIR$/src/com/gui/styles/PanelComponents.java" />
-        <option value="$PROJECT_DIR$/src/com/gui/ui/AppForm.java" />
-        <option value="$PROJECT_DIR$/src/com/algorithms/FileAlgorithms.java" />
-        <option value="$PROJECT_DIR$/src/com/userfiles/Transaction.java" />
-        <option value="$PROJECT_DIR$/src/com/gui/actions/ButtonActions.java" />
-        <option value="$PROJECT_DIR$/src/com/algorithms/SavingsAccountThread.java" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="822" />
-  </component>
   <component name="ProjectId" id="1VI2FvnKg5vTqdmIK756Ywkca4i" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="bankApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bankApp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bankApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bankApp" type="462c0819:PsiDirectoryNode" />
-              <item name="accounts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bankApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bankApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bankApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bankApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bankApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bankApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="algorithms" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bankApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bankApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bankApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bankApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
-              <item name="actions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bankApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bankApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
-              <item name="styles" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bankApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bankApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bankApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bankApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="observers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bankApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bankApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="observers" type="462c0819:PsiDirectoryNode" />
-              <item name="labelObserver" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bankApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bankApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="userfiles" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-    </panes>
-  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -238,18 +68,6 @@
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="212" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Application.BankApp">
     <configuration name="BankApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -425,50 +243,12 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
-  <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="822" extended-state="0" />
-    <editor active="true" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32876712" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32876712" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32876712" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32876712" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-    </layout>
-  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
             <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
               <option name="COLUMN_ORDER" />
             </State>
           </value>
@@ -517,10 +297,10 @@
     </state>
     <state x="574" y="143" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1577302259682" />
     <state x="718" y="179" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1578599125176" />
-    <state x="808" y="430" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1578507139202">
+    <state x="808" y="430" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1578920054003">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="808" y="430" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1578507139202" />
+    <state x="808" y="430" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1578920054003" />
     <state x="566" y="318" width="403" height="236" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1578787146109">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -534,46 +314,46 @@
     </state>
     <state x="414" y="30" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1578791200594" />
     <state x="518" y="38" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1578526386371" />
-    <state width="1493" height="174" key="GridCell.Tab.0.bottom" timestamp="1578830084047">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1877" height="178" key="GridCell.Tab.0.bottom" timestamp="1578926577595">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1493" height="174" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1578830084047" />
-    <state width="1877" height="328" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1578599432047" />
-    <state width="1493" height="174" key="GridCell.Tab.0.center" timestamp="1578830084047">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1877" height="178" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1578926577595" />
+    <state width="1877" height="178" key="GridCell.Tab.0.center" timestamp="1578926577595">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1493" height="174" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1578830084047" />
-    <state width="1877" height="328" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1578599432047" />
-    <state width="1493" height="174" key="GridCell.Tab.0.left" timestamp="1578830084047">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1877" height="178" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1578926577595" />
+    <state width="1877" height="178" key="GridCell.Tab.0.left" timestamp="1578926577595">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1493" height="174" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1578830084047" />
-    <state width="1877" height="328" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1578599432047" />
-    <state width="1493" height="174" key="GridCell.Tab.0.right" timestamp="1578830084047">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1877" height="178" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1578926577595" />
+    <state width="1877" height="178" key="GridCell.Tab.0.right" timestamp="1578926577595">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1493" height="174" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1578830084047" />
-    <state width="1877" height="328" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1578599432047" />
-    <state width="1493" height="299" key="GridCell.Tab.1.bottom" timestamp="1578791218418">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1877" height="178" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1578926577595" />
+    <state width="1877" height="363" key="GridCell.Tab.1.bottom" timestamp="1578925258763">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1493" height="299" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1578791218418" />
-    <state width="1877" height="328" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1578599432048" />
-    <state width="1493" height="299" key="GridCell.Tab.1.center" timestamp="1578791218418">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1877" height="363" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1578925258763" />
+    <state width="1877" height="363" key="GridCell.Tab.1.center" timestamp="1578925258763">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1493" height="299" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1578791218418" />
-    <state width="1877" height="328" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1578599432048" />
-    <state width="1493" height="299" key="GridCell.Tab.1.left" timestamp="1578791218418">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1877" height="363" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1578925258763" />
+    <state width="1877" height="363" key="GridCell.Tab.1.left" timestamp="1578925258763">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1493" height="299" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1578791218418" />
-    <state width="1877" height="328" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1578599432048" />
-    <state width="1493" height="299" key="GridCell.Tab.1.right" timestamp="1578791218418">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1877" height="363" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1578925258763" />
+    <state width="1877" height="363" key="GridCell.Tab.1.right" timestamp="1578925258763">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1493" height="299" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1578791218418" />
-    <state width="1877" height="328" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1578599432048" />
+    <state width="1877" height="363" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1578925258763" />
     <state x="276" y="62" key="SettingsEditor" timestamp="1577220579357">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -593,95 +373,10 @@
     </state>
     <state x="425" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1578785904067" />
     <state x="531" y="246" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1578599302611" />
-    <state x="539" y="226" width="840" height="848" key="search.everywhere.popup" timestamp="1578594299019">
+    <state x="539" y="226" width="840" height="848" key="search.everywhere.popup" timestamp="1578925642120">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1577652920951" />
-    <state x="539" y="226" width="840" height="848" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1578594299019" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/gui/styles/PanelComponents.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1949">
-          <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/algorithms/NumGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="40" column="50" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/userfiles/SavingsAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/userfiles/BaseAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/gui/ui/AppForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="64" column="93" selection-start-line="64" selection-start-column="93" selection-end-line="64" selection-end-column="93" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/algorithms/FileAlgorithms.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="82" column="46" selection-start-line="82" selection-start-column="46" selection-end-line="82" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/gui/styles/Styles.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="19" column="56" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/observers/Subject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/gui/actions/ButtonActions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="131" column="52" selection-start-line="131" selection-start-column="52" selection-end-line="131" selection-end-column="52" />
-          <folding>
-            <element signature="class#changePanelStyle#0;class#ButtonActions#0" />
-            <element signature="class#changeAccountStyle#0;class#ButtonActions#0" />
-            <element signature="class#transactionButton#0;class#ButtonActions#0" />
-            <element signature="class#deposit#0;class#ButtonActions#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/userfiles/Transaction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="40" column="68" lean-forward="true" selection-start-line="40" selection-start-column="68" selection-end-line="40" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/algorithms/SavingsAccountThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="21" column="93" selection-start-line="21" selection-start-column="93" selection-end-line="21" selection-end-column="93" />
-        </state>
-      </provider>
-    </entry>
+    <state x="539" y="226" width="840" height="848" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1578925642120" />
   </component>
 </project>

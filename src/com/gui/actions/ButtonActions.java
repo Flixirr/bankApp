@@ -54,14 +54,12 @@ public class ButtonActions {
         private JPanel panel;
         private ArrayList<Component> comps;
         int state;
-        String accType; //acctype.txt or savacctype.txt
 
-        public changeAccountStyle(JPanel panel, ArrayList<Component> comps, int state, String accType)
+        public changeAccountStyle(JPanel panel, ArrayList<Component> comps, int state)
         {
             this.panel = panel;
             this.comps = comps;
             this.state = state;
-            this.accType = accType;
         }
 
         @Override
@@ -195,33 +193,37 @@ public class ButtonActions {
             else if(state == 2) {
                 String desc = ((JTextField) Algs.getComponentByName(main, "DESC")).getText();
                 String title = ((JTextField) Algs.getComponentByName(main, "TITLE")).getText();
-                double amount = Double.parseDouble(((JTextField) Algs.getComponentByName(main, "AMOUNT")).getText());
-                String target =
-                        Algs.accNumCorrectFormat(((JTextField) Algs.getComponentByName(main, "SELECTEDACC")).getText());
-                if(amount < 0 && amount > loggedUser.getbAcc().getBalance()) {
-                    showMessageDialog(null, "Amount is negative or greater than account balance");
-                } else {
-                    if (CheckDataCorrectness.checkAccNum(target) && FileAlgorithms.getNumUserPair().containsKey(target)) {
-                        //clear comps actually clears text fields
-                        Algs.clearComps(main);
+                String amountS = ((JTextField) Algs.getComponentByName(main, "AMOUNT")).getText();
+                String target = ((JTextField) Algs.getComponentByName(main, "SELECTEDACC")).getText();
+                double amount;
 
-                        //transaction object to target acc and origin acc
-                        if (target.charAt(0) == '2') {
-                            new Transaction(loggedUser.getbAcc(), FileAlgorithms.getNumUserPair().get(target).getsAcc(), amount, title, desc);
-                        } else {
-                            new Transaction(loggedUser.getbAcc(), FileAlgorithms.getNumUserPair().get(target).getbAcc(), amount, title, desc);
-                        }
-
-                        loggedUser = FileAlgorithms.readObject(loggedUser.getPESEL());
-
-                        //notify labels about transaction
-                        if (observers.isEmpty()) {
-                            registerObserver(accB);
-                            registerObserver(sAccB);
-                        }
-                        notifyObservers();
+                if(CheckDataCorrectness.checkAmountProv(amountS)) {
+                    amount = Double.parseDouble(amountS);
+                    if (amount < 0 && amount > loggedUser.getbAcc().getBalance()) {
+                        showMessageDialog(null, "Amount is negative or greater than account balance");
                     } else {
-                        showMessageDialog(null, "Provided account number is incorrect");
+                        if (CheckDataCorrectness.checkAccNum(target) && FileAlgorithms.getNumUserPair().containsKey(target)) {
+
+                            //clear comps actually clears text fields
+                            Algs.clearComps(main);
+                            //transaction object to target acc and origin acc
+                            if (target.charAt(0) == '2') {
+                                new Transaction(loggedUser.getbAcc(), FileAlgorithms.getNumUserPair().get(target).getsAcc(), amount, title, desc);
+                            } else {
+                                new Transaction(loggedUser.getbAcc(), FileAlgorithms.getNumUserPair().get(target).getbAcc(), amount, title, desc);
+                            }
+
+                            loggedUser = FileAlgorithms.readObject(loggedUser.getPESEL());
+
+                            //notify labels about transaction
+                            if (observers.isEmpty()) {
+                                registerObserver(accB);
+                                registerObserver(sAccB);
+                            }
+                            notifyObservers();
+                        } else {
+                            showMessageDialog(null, "Provided account number is incorrect");
+                        }
                     }
                 }
             }
@@ -266,6 +268,7 @@ public class ButtonActions {
                     notifyObservers();
                     depoCode = "000000";
                 } else {
+                    ((JTextField) Algs.getComponentByName(main, "DEPOCODE")).setText("");
                     showMessageDialog(null, "Entered deposit code is invalid!");
                 }
             }
@@ -368,14 +371,18 @@ public class ButtonActions {
             else if(AppForm.getThisState() == 3) AppForm.setThisState(222);
 
             depoCode = NumGenerator.generateDepoNum();
-            showMessageDialog(null, "Your deposit number is " + depoCode);
             main.revalidate();
             main.repaint();
+            showMessageDialog(null, "Your deposit number is " + depoCode);
         }
     }
 
     public static SavAccountBalance getsAccB() {
         return sAccB;
+    }
+
+    public static void setLoggedUser(User loggedUser) {
+        ButtonActions.loggedUser = loggedUser;
     }
 
     public static User getLoggedUser() {

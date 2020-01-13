@@ -2,7 +2,6 @@ package com.gui.ui;
 
 import com.gui.actions.ButtonActions;
 import com.gui.styles.*;
-import com.userfiles.User;
 
 import javax.swing.*;
 import java.awt.*;
@@ -57,10 +56,10 @@ public class AppForm extends JFrame {
                 PanelComponents.getLoggedToolbarButtons(), PanelComponents.getAccountPanel()));
 
         PanelComponents.getAccount().addActionListener(new ButtonActions.changeAccountStyle(mainPanel,
-                PanelComponents.getAccountPanel(), 1, "acc.txt"));
+                PanelComponents.getAccountPanel(), 1));
 
         PanelComponents.getSavAccount().addActionListener(new ButtonActions.changeAccountStyle(mainPanel,
-                PanelComponents.getSavAccountPanel(), 3, "savacc.txt"));
+                PanelComponents.getSavAccountPanel(), 3));
 
         PanelComponents.getDeposit().addActionListener(new ButtonActions.deposit(mainPanel));
 

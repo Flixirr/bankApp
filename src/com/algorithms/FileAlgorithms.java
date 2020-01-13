@@ -33,8 +33,10 @@ public class FileAlgorithms {
         //Check if user already exists
         if(!dirExist) dirExist = dir.mkdir();
         //Create new user, then write object to file
-        User user = new User(data.get("Name!"), data.get("Surname!"), data.get("PESEL!"), data.get("Password!"));
-        saveChanges(user, false);
+        if(dirExist) {
+            User user = new User(data.get("Name!"), data.get("Surname!"), data.get("PESEL!"), data.get("Password!"));
+            saveChanges(user, false);
+        }
     }
 
     public static void saveChanges(User user, boolean overwrite) {

@@ -12,12 +12,12 @@ public class SavingsAccount extends Account implements Serializable {
 
     @Override
     public void addToBalance(Transaction transaction) {
-        this.setBalance((this.getBalance()*100+transaction.getAmount()*100)/100);
+        this.setBalance(((int) (this.getBalance()*100+transaction.getAmount()*100)/100.0));
         this.getTransactions().add(transaction);
     }
 
     @Override
     public void subFromBalance(Transaction transaction) {
-        this.setBalance((this.getBalance()*100-transaction.getAmount()*100)/100);
+        this.setBalance(((int) (this.getBalance()*100-transaction.getAmount()*100)/100.0));
     }
 }

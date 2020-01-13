@@ -1,5 +1,7 @@
 package com.algorithms;
 
+import com.gui.actions.ButtonActions;
+
 import static javax.swing.JOptionPane.showMessageDialog;
 
 public class CheckDataCorrectness {
@@ -25,9 +27,16 @@ public class CheckDataCorrectness {
         boolean r =  accNum.matches("[12]\\s*0000\\s*\\d{4}");
         if(r) {
             String test = Algs.accNumCorrectFormat(accNum);
+            if(test.equals(ButtonActions.getLoggedUser().getbAcc().getNumber())) return false;
             return FileAlgorithms.getNumUserPair().containsKey(test);
         }
 
         return false;
+    }
+
+    public static boolean checkAmountProv(String amount) {
+        boolean r = amount.matches("[0-9]+\\.\\d{2}") || amount.matches("[0-9]+\\.\\d") || amount.matches("[0-9]+");
+        if(!r) showMessageDialog(null, "Amount type incorrect - correct type is XX.XX");
+        return r;
     }
 }

@@ -18,7 +18,7 @@ public class Transaction implements Serializable {
         this.amount = amount;
         User tUser = FileAlgorithms.getNumUserPair().get(target.getNumber());
         target.addToBalance(this);
-
+        transactionLabel.setFont(new Font("Arial", Font.PLAIN, 9));
         /*
         easy fix to create this for multiple transactions at one time is to create a queue in user which
         holds transactions and realizes them with 5 s delay but it is not necessary since it is only for one device
@@ -38,13 +38,13 @@ public class Transaction implements Serializable {
             FileAlgorithms.saveChanges(tUser, true);
         }
         else if(origin.getNumber().equals("SAVACC")) {
-            String id = NumGenerator.generateTransactionNum(target);
             transactionLabel.setText("SAVINGS FOR " + amount);
             FileAlgorithms.saveChanges(tUser, true);
         }
         else {
             FileAlgorithms.saveChanges(tUser, true);
             String id = NumGenerator.generateTransactionNum(origin);
+
             User oUser = FileAlgorithms.readObject(ButtonActions.getLoggedUser().getPESEL());
             origin.subFromBalance(this);
             assert oUser != null;
@@ -54,10 +54,8 @@ public class Transaction implements Serializable {
                     origin.getNumber() + ' ' + oUser.getName() +  ' ' + oUser.getSurname() + " PAYEE'S DATA " + target.getNumber() +
                     ' ' + tUser.getName() + ' ' + tUser.getSurname());
             FileAlgorithms.saveChanges(oUser, true);
-            FileAlgorithms.saveChanges(tUser, true);
+            if(!oUser.getPESEL().equals(tUser.getPESEL()))FileAlgorithms.saveChanges(tUser, true);
         }
-
-        transactionLabel.setFont(new Font("Arial", Font.PLAIN, 9));
     }
 
     public JLabel getTransactionLabel() {
