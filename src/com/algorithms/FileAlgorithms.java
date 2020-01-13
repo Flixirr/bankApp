@@ -92,7 +92,6 @@ public class FileAlgorithms {
     public static int fileCount(File dir) {
         if(!dir.exists()) return 0;
         String[] files = dir.list((file, s) -> new File(file, s).isFile());
-        System.out.println(Arrays.toString(files));
 
         assert files != null;
         return files.length;
