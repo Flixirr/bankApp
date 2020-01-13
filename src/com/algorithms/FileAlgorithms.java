@@ -3,6 +3,7 @@ package com.algorithms;
 import com.userfiles.Transaction;
 import com.userfiles.User;
 
+import javax.swing.*;
 import java.io.*;
 import java.util.*;
 
@@ -69,6 +70,20 @@ public class FileAlgorithms {
         }
 
         return user;
+    }
+
+    //return transaction labels as arraylist
+    public static List<JLabel> transToLabel(User user) {
+        List<JLabel> labels = new ArrayList<>();
+
+        for(Transaction t : user.getbAcc().getTransactions()) {
+            labels.add(t.getTransactionLabel());
+        }
+        for(Transaction t : user.getsAcc().getTransactions()) {
+            labels.add(t.getTransactionLabel());
+        }
+
+        return labels;
     }
 
     //Counts files in chosen directory

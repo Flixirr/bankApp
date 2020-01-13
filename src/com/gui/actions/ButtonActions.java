@@ -8,7 +8,7 @@ import com.observers.Observer;
 import com.observers.Subject;
 import com.observers.labelObserver.AccountBalance;
 import com.observers.labelObserver.SavAccountBalance;
-import com.userfiles.Account;
+import com.userfiles.BaseAccount;
 import com.userfiles.Transaction;
 import com.userfiles.User;
 
@@ -16,9 +16,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
 import java.util.*;
-import java.util.List;
 
 import static javax.swing.JOptionPane.showMessageDialog;
 
@@ -29,6 +27,7 @@ public class ButtonActions {
     private static ArrayList<Observer> observers = new ArrayList<>();
     private static User loggedUser = null;
     private static Thread savLogic;
+    private static String depoCode;
 
     public static class changePanelStyle implements ActionListener {
         private JPanel panel;
@@ -126,15 +125,17 @@ public class ButtonActions {
                 if (Objects.requireNonNull(FileAlgorithms.readObject(PESEL)).getPassword().equals(password)) {
                     loggedUser = FileAlgorithms.readObject(PESEL);
                     FileAlgorithms.setNumUserPair();
-                    savLogic = savLogic = new Thread(new SavingsAccountThread("SavAcc"));
-                    //savLogic.start();
+                    savLogic = new Thread(new SavingsAccountThread());
+                    SavingsAccountThread.lIn = true;
+
+                    accB = new AccountBalance();
+                    sAccB = new SavAccountBalance();
+
+                    savLogic.start();
 
                     //Reset fields so after logout they don't remember pesel neither password
                     ((JTextField) Algs.getComponentByName(panel, "PESEL!")).setText("");
                     ((JTextField) Algs.getComponentByName(panel, "Password!")).setText("");
-
-                    accB = new AccountBalance();
-                    sAccB = new SavAccountBalance();
 
                     //set state to 1 (logged in)
                     PanelComponents.getAccNumInt().setText(loggedUser.getbAcc().getNumber());
@@ -249,6 +250,25 @@ public class ButtonActions {
                     notifyObservers();
                 }
             }
+            else if(state == 111 || state == 222) {
+                String enteredCode = ((JTextField) Algs.getComponentByName(main, "DEPOCODE")).getText();
+                if(enteredCode.equals(depoCode) && enteredCode.length() == 5) {
+                    ((JTextField) Algs.getComponentByName(main, "DEPOCODE")).setText("");
+                    if(state == 111) new Transaction(new BaseAccount("DEPO", 10), loggedUser.getbAcc(), 10,
+                            "DEPO", "DEPO");
+                    else new Transaction(new BaseAccount("DEPO", 10), loggedUser.getsAcc(), 10,
+                            "DEPO", "DEPO");
+
+                    if (observers.isEmpty()) {
+                        registerObserver(accB);
+                        registerObserver(sAccB);
+                    }
+                    notifyObservers();
+                    depoCode = "000000";
+                } else {
+                    showMessageDialog(null, "Entered deposit code is invalid!");
+                }
+            }
         }
 
         @Override
@@ -284,6 +304,7 @@ public class ButtonActions {
             AppForm.setThisState(0);
             observers.clear();
             loggedUser = null;
+            SavingsAccountThread.lIn = false;
             savLogic.interrupt();
             savLogic = null;
 
@@ -316,6 +337,11 @@ public class ButtonActions {
             panel.setLayout(new GridBagLayout());
             GridBagConstraints gbc = new GridBagConstraints();
             gbc.insets = new Insets(0,10,0,0);
+            gbc.gridy = 0;
+            for(JLabel label : FileAlgorithms.transToLabel(loggedUser)) {
+                panel.add(label, gbc);
+                gbc.gridy++;
+            }
 
             scrollPane.setViewportView(panel);
 
@@ -326,9 +352,25 @@ public class ButtonActions {
 
     public static class deposit implements ActionListener {
 
+        JPanel main;
+
+        public deposit(JPanel main) {
+            this.main = main;
+        }
+
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
+            main.removeAll();
 
+            Styles.mainPanelComponents(main, PanelComponents.getDepoComps());
+
+            if(AppForm.getThisState() == 1) AppForm.setThisState(111);
+            else if(AppForm.getThisState() == 3) AppForm.setThisState(222);
+
+            depoCode = NumGenerator.generateDepoNum();
+            showMessageDialog(null, "Your deposit number is " + depoCode);
+            main.revalidate();
+            main.repaint();
         }
     }
 

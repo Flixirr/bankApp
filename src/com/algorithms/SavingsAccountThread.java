@@ -3,26 +3,29 @@ package com.algorithms;
 import com.gui.actions.ButtonActions;
 import com.observers.Observer;
 import com.observers.Subject;
+import com.userfiles.BaseAccount;
+import com.userfiles.Transaction;
 
 import java.util.ArrayList;
 
 public class SavingsAccountThread implements Runnable, Subject {
-    String name;
-    ArrayList<Observer> observers = new ArrayList<>();
-    static boolean running;
-
-    public SavingsAccountThread(String name) {
-        this.name = name;
-    }
+    private ArrayList<Observer> observers = new ArrayList<>();
+    public static boolean lIn = false;
 
     @Override
     public void run() {
 
         try {
-            running = true;
             registerObserver(ButtonActions.getsAccB());
-            while(running) {
-                System.out.println("Dzialam");
+            double amount;
+            while (lIn) {
+                amount = Math.round(ButtonActions.getLoggedUser().getsAcc().getBalance()/100);
+                if(ButtonActions.getLoggedUser().getsAcc().getBalance() != 0) {
+                    if (amount < 0.01) amount = 0.01;
+                    new Transaction(new BaseAccount("SAVACC", amount), ButtonActions.getLoggedUser().getsAcc(), amount, "SAV",
+                            "SAV");
+                    notifyObservers();
+                }
                 Thread.sleep(3000);
             }
         } catch (InterruptedException e) {

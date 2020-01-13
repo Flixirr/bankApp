@@ -39,7 +39,8 @@ public class PanelComponents {
             enterAmount = new JLabel("Enter amount "), accNum = new JLabel("Account number: "),
             accNumInt = new JLabel(), sAccNumInt = new JLabel("0"),
             warning = new JLabel("WARNING! "), warnMsg = new JLabel("Transactions can only be made to main account"),
-            titleLab = new JLabel("Title"), descLab = new JLabel("Description");
+            titleLab = new JLabel("Title"), descLab = new JLabel("Description"),
+            codeLab = new JLabel("Enter code ");
 
     private static ArrayList<JButton> welcomeToolbarButtons = new ArrayList<>() {
         {
@@ -132,6 +133,18 @@ public class PanelComponents {
             add(submit);
         }
     };
+
+    private static ArrayList<Component> depoComps = new ArrayList<>() {
+        {
+            add(codeLab);
+            add(depositCode);
+            add(submit);
+        }
+    };
+
+    public static ArrayList<Component> getDepoComps() {
+        return depoComps;
+    }
 
     public static ArrayList<Component> getWelcomeMainComps() {
         return welcomeMainComps;

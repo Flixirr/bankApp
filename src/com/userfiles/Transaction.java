@@ -5,54 +5,66 @@ import com.algorithms.NumGenerator;
 import com.gui.actions.ButtonActions;
 
 import javax.swing.*;
-import java.io.File;
+import java.awt.*;
 import java.io.Serializable;
-import java.util.Date;
-import java.util.Objects;
 
 public class Transaction implements Serializable {
     static final long serialVersionUID = 10L;
-    Account origin, target;
-    private User tUser, oUser;
     private double amount;
-    private String title, desc, id;
-    Date date = new Date();
-    JLabel transactionLabel = new JLabel();
+    private JLabel transactionLabel = new JLabel();
 
     public Transaction(Account origin, Account target, double amount, String title, String desc)
     {
-        this.origin = origin;
-        this.target = target;
         this.amount = amount;
-        this.title = title;
-        this.desc = desc;
-        id = NumGenerator.generateTransactionNum(origin);
-
-        tUser = FileAlgorithms.getNumUserPair().get(target.getNumber());
+        User tUser = FileAlgorithms.getNumUserPair().get(target.getNumber());
         target.addToBalance(this);
 
-        //easy fix to create this for multiple transactions at one time is to create a queue in user which
-        //holds transactions and realizes them with 5 s delay
+        /*
+        easy fix to create this for multiple transactions at one time is to create a queue in user which
+        holds transactions and realizes them with 5 s delay but it is not necessary since it is only for one device
 
-        //check which number is chosen and set account to have greater balance (if it only adds then it's not working)
+        check which number is chosen and set account to have greater balance (if it only adds then it's not working)
+        */
+
         if(target.getNumber().charAt(0) == '2') {
             tUser.setsAcc(target);
         } else {
             tUser.setbAcc(target);
         }
 
+        if(origin.getNumber().equals("DEPO")) {
+            String id = NumGenerator.generateTransactionNum(target);
+            transactionLabel.setText("DEPOID " + id + " ON ACCOUNT " + target.getNumber());
+            FileAlgorithms.saveChanges(tUser, true);
+        }
+        else if(origin.getNumber().equals("SAVACC")) {
+            String id = NumGenerator.generateTransactionNum(target);
+            transactionLabel.setText("SAVINGS FOR " + amount);
+            FileAlgorithms.saveChanges(tUser, true);
+        }
+        else {
+            FileAlgorithms.saveChanges(tUser, true);
+            String id = NumGenerator.generateTransactionNum(origin);
+            User oUser = FileAlgorithms.readObject(ButtonActions.getLoggedUser().getPESEL());
+            origin.subFromBalance(this);
+            assert oUser != null;
+            oUser.setbAcc(origin);
 
-        //overwrite user files to save balance
-        FileAlgorithms.saveChanges(tUser, true);
+            transactionLabel.setText("ID " + id + " AMOUNT " + amount + " TITLE " + title + " DESC " + desc + " PAYERS DATA " +
+                    origin.getNumber() + ' ' + oUser.getName() +  ' ' + oUser.getSurname() + " PAYEE'S DATA " + target.getNumber() +
+                    ' ' + tUser.getName() + ' ' + tUser.getSurname());
+            FileAlgorithms.saveChanges(oUser, true);
+            FileAlgorithms.saveChanges(tUser, true);
+        }
 
-        oUser = FileAlgorithms.readObject(ButtonActions.getLoggedUser().getPESEL());
-        origin.subFromBalance(this);
-        oUser.setbAcc(origin);
-
-        FileAlgorithms.saveChanges(oUser, true);
+        transactionLabel.setFont(new Font("Arial", Font.PLAIN, 9));
     }
 
-    public double getAmount() {
+    public JLabel getTransactionLabel() {
+        return transactionLabel;
+    }
+
+    double getAmount() {
         return amount;
     }
 }

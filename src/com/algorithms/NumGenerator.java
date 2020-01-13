@@ -1,11 +1,8 @@
 package com.algorithms;
 
-import com.gui.actions.ButtonActions;
 import com.userfiles.Account;
 
 import java.io.File;
-import java.io.FileOutputStream;
-import java.util.Collections;
 
 public class NumGenerator {
     static String baseForAcc = "1 0000 ";

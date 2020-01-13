@@ -62,6 +62,8 @@ public class AppForm extends JFrame {
         PanelComponents.getSavAccount().addActionListener(new ButtonActions.changeAccountStyle(mainPanel,
                 PanelComponents.getSavAccountPanel(), 3, "savacc.txt"));
 
+        PanelComponents.getDeposit().addActionListener(new ButtonActions.deposit(mainPanel));
+
         PanelComponents.getSubmit().addActionListener(new ButtonActions.submit(mainPanel));
 
         PanelComponents.getTransaction().addActionListener(new ButtonActions.transactionButton(mainPanel));
