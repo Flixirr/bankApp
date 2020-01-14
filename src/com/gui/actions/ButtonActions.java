@@ -28,6 +28,7 @@ public class ButtonActions {
     private static User loggedUser = null;
     private static Thread savLogic;
     private static String depoCode;
+    private static HashMap<String, User> numUserPair = new HashMap<>();
 
     public static class changePanelStyle implements ActionListener {
         private JPanel panel;
@@ -122,7 +123,7 @@ public class ButtonActions {
             if(FileAlgorithms.readObject(PESEL) != null) {
                 if (Objects.requireNonNull(FileAlgorithms.readObject(PESEL)).getPassword().equals(password)) {
                     loggedUser = FileAlgorithms.readObject(PESEL);
-                    FileAlgorithms.setNumUserPair();
+                    FileAlgorithms.setNumUserPair(numUserPair);
                     savLogic = new Thread(new SavingsAccountThread());
                     SavingsAccountThread.lIn = true;
 
@@ -202,15 +203,15 @@ public class ButtonActions {
                     if (amount < 0 && amount > loggedUser.getbAcc().getBalance()) {
                         showMessageDialog(null, "Amount is negative or greater than account balance");
                     } else {
-                        if (CheckDataCorrectness.checkAccNum(target) && FileAlgorithms.getNumUserPair().containsKey(target)) {
+                        if (CheckDataCorrectness.checkAccNum(target) && numUserPair.containsKey(target)) {
 
                             //clear comps actually clears text fields
                             Algs.clearComps(main);
                             //transaction object to target acc and origin acc
                             if (target.charAt(0) == '2') {
-                                new Transaction(loggedUser.getbAcc(), FileAlgorithms.getNumUserPair().get(target).getsAcc(), amount, title, desc);
+                                new Transaction(loggedUser.getbAcc(), numUserPair.get(target).getsAcc(), amount, title, desc);
                             } else {
-                                new Transaction(loggedUser.getbAcc(), FileAlgorithms.getNumUserPair().get(target).getbAcc(), amount, title, desc);
+                                new Transaction(loggedUser.getbAcc(), numUserPair.get(target).getbAcc(), amount, title, desc);
                             }
 
                             loggedUser = FileAlgorithms.readObject(loggedUser.getPESEL());
@@ -384,11 +385,11 @@ public class ButtonActions {
         return sAccB;
     }
 
-    public static void setLoggedUser(User loggedUser) {
-        ButtonActions.loggedUser = loggedUser;
-    }
-
     public static User getLoggedUser() {
         return loggedUser;
+    }
+
+    public static HashMap<String, User> getNumUserPair() {
+        return numUserPair;
     }
 }

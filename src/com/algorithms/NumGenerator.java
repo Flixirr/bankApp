@@ -4,12 +4,10 @@ import com.userfiles.Account;
 
 import java.io.File;
 
-public class NumGenerator {
-    static String baseForAcc = "1 0000 ";
-    static String baseForSavAcc = "2 0000 ";
+public interface NumGenerator {
 
     //convert number to string XXXX, e.g 1 to 0001
-    public static String numXXXXFormat(int num) {
+    static String numXXXXFormat(int num) {
         StringBuilder result = new StringBuilder(Integer.toString(num));
 
         for (int i = 4 - result.length(); i > 0; i--) {
@@ -19,30 +17,30 @@ public class NumGenerator {
         return result.toString();
     }
 
-    public static String generateAccNum() {
+    static String generateAccNum() {
         int fileCount = FileAlgorithms.fileCount(new File("accounts"));
         if (fileCount == 0) {
-            return baseForAcc + "0001";
+            return "1 0000 0001";
         } else {
-            return baseForAcc + numXXXXFormat(fileCount + 1);
+            return "1 0000 " + numXXXXFormat(fileCount + 1);
         }
     }
 
-    public static String generateSAccNum() {
+    static String generateSAccNum() {
         int fileCount = FileAlgorithms.fileCount(new File("accounts"));
         if (fileCount == 0) {
-            return baseForSavAcc + "0001";
+            return "2 0000 0001";
         } else {
-            return baseForSavAcc + numXXXXFormat(fileCount + 1);
+            return "2 0000 " + numXXXXFormat(fileCount + 1);
         }
     }
 
-    public static String generateTransactionNum(Account acc) {
+    static String generateTransactionNum(Account acc) {
         return acc.getNumber() + (acc.getTransactions().size());
     }
 
     //generate random code for 20 pln deposit
-    public static String generateDepoNum(){
+    static String generateDepoNum(){
         final String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                 + "0123456789"
                 + "abcdefghijklmnopqrstuvxyz";

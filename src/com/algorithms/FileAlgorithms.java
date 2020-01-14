@@ -8,12 +8,13 @@ import java.io.*;
 import java.util.*;
 
 import static javax.swing.JOptionPane.showMessageDialog;
-public class FileAlgorithms {
 
-    private static HashMap<String, User> numUserPair = new HashMap<>();
+public interface FileAlgorithms {
+
+
 
     //Sets map with acc number as key and PESEL as value to use it to login/make transaction
-    public static void setNumUserPair() {
+    static void setNumUserPair(Map<String, User> numUserPair) {
         File dir = new File("accounts");
         String[] files = dir.list((file, s) -> new File(file, s).isFile());
         assert files != null : "files is null";
@@ -27,7 +28,7 @@ public class FileAlgorithms {
     }
 
     //Writes newly created account to txt files
-    public static void accountRegFile(Map<String, String> data) {
+    static void accountRegFile(Map<String, String> data) {
         File dir = new File("accounts");
         boolean dirExist = dir.exists();
         //Check if user already exists
@@ -40,7 +41,7 @@ public class FileAlgorithms {
         }
     }
 
-    public static void saveChanges(User user, boolean overwrite) {
+    static void saveChanges(User user, boolean overwrite) {
         File userFile = new File("accounts/" + user.getPESEL() + ".bin");
         if(overwrite || !userFile.exists()) {
             try {
@@ -58,7 +59,7 @@ public class FileAlgorithms {
     }
 
     //Reads requested by pesel object from file
-    public static User readObject(String pesel) {
+    static User readObject(String pesel) {
         User user = null;
         try {
             File f = new File("accounts/"+pesel+".bin");
@@ -76,7 +77,7 @@ public class FileAlgorithms {
     }
 
     //return transaction labels as arraylist
-    public static List<JLabel> transToLabel(User user) {
+    static List<JLabel> transToLabel(User user) {
         List<JLabel> labels = new ArrayList<>();
 
         for(Transaction t : user.getbAcc().getTransactions()) {
@@ -90,7 +91,7 @@ public class FileAlgorithms {
     }
 
     //Counts files in chosen directory
-    public static int fileCount(File dir) {
+    static int fileCount(File dir) {
         if(!dir.exists()) return 0;
         String[] files = dir.list((file, s) -> new File(file, s).isFile());
 
@@ -98,9 +99,4 @@ public class FileAlgorithms {
         return files.length;
     }
 
-    //Getters and setters
-
-    public static HashMap<String, User> getNumUserPair() {
-        return numUserPair;
-    }
 }

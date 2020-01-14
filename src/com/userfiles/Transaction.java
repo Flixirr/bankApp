@@ -16,7 +16,7 @@ public class Transaction implements Serializable {
     public Transaction(Account origin, Account target, double amount, String title, String desc)
     {
         this.amount = amount;
-        User tUser = FileAlgorithms.getNumUserPair().get(target.getNumber());
+        User tUser = ButtonActions.getNumUserPair().get(target.getNumber());
         target.addToBalance(this);
         transactionLabel.setFont(new Font("Arial", Font.PLAIN, 9));
         /*

@@ -5,10 +5,10 @@ import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Algs {
+public interface Algs {
 
     //use to get specific component from panel by name
-    public static Component getComponentByName(JPanel panel, String name) {
+    static Component getComponentByName(JPanel panel, String name) {
         Map<String, Component> comps = new HashMap<>();
         Component[] arr = panel.getComponents();
 
@@ -21,7 +21,7 @@ public class Algs {
         return comps.get(name);
     }
     //clear all textfields in panel
-    public static void clearComps(JPanel panel) {
+    static void clearComps(JPanel panel) {
         for(Component co: panel.getComponents()) {
             if(co instanceof JTextField) {
                 ((JTextField) co).setText("");
@@ -29,7 +29,7 @@ public class Algs {
         }
     }
     //check if account number is corrects
-    public static String accNumCorrectFormat(String num) {
+    static String accNumCorrectFormat(String num) {
         String result = num.replace(" ", "");
         result = new StringBuilder(result).insert(1, " ").toString();
         result = new StringBuilder(result).insert(result.length()-4, " ").toString();
